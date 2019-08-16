@@ -1,2 +1,2 @@
 # twittersentiment
-personal project to analyse tweets
+personal project to analyse tweets.
