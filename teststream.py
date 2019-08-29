@@ -12,7 +12,7 @@ import credentialstwitter
 # # # Streamer
 class TwitterStreamer():
     """
-    Class for streaming and processing live tweets.
+    To stream tweets live
     """
     #def __init__(self):
 
@@ -28,7 +28,7 @@ class TwitterStreamer():
 # # # # Stream listener
 class thestreamListener(StreamListener):
     """
-    This is a basic listener that just prints received tweets to stdout.
+    To extract data from json and pass it into load into db class
     """
 
     def __init__(self, fetched_tweets_filename):
@@ -40,7 +40,7 @@ class thestreamListener(StreamListener):
 
             data = json.loads(ori_raw_data)
 
-            # Obtain all the variables to store in each column
+            # Extract values from json raw data
             #tweet_topics=topics[0],topics[1]
             tweet_topics=topics
             user_id = data['user']['id']
@@ -70,13 +70,13 @@ class thestreamListener(StreamListener):
 
             print(tweet_topics,"§",user_id,"§",twitter_user_name,"§",user_name,"§",tweet,"§",retweetstatus_user
                   ,"§",retweetstatus_name,"§",created_at,)
-            datajson=tweet_topics,user_id,twitter_user_name,user_name,tweet,retweetstatus_user,retweetstatus_name,created_at
+            #datajson=tweet_topics,user_id,twitter_user_name,user_name,tweet,retweetstatus_user,retweetstatus_name,created_at
             #print(datajson)
             with open(self.fetched_tweets_filename, 'a') as tf:
                 tf.write(str(tweet_topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(retweetstatus_user)+"§"+str(retweetstatus_name)+"§"+str(created_at)+"\n")
             return True
 
-            # Store them in the corresponding table in the database
+            # Load it into a table in db
             # load_into_db(topics, user_id, twitter_user_name, user_name, tweet, retweetstatus_user,
             #                       retweetstatus_name, created_at)
 
