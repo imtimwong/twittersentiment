@@ -8,18 +8,30 @@ import json
 
 import credentialstwitter
 
+class authenticateTwitterClass():
+    """
+	reads from credentialstwitter file that contains the keys and access tokens
+	"""
+
+    def authenticateTwitter(self):
+        auth = OAuthHandler(credentialstwitter.CONSUMER_KEY, credentialstwitter.CONSUMER_SECRET)
+        auth.set_access_token(credentialstwitter.ACCESS_TOKEN, credentialstwitter.ACCESS_TOKEN_SECRET)
+
+        return auth
 
 # # # Streamer
 class TwitterStreamer():
     """
     To stream tweets live
     """
-    #def __init__(self):
+    def __init__(self):
+        self.tweetauth = authenticateTwitterClass() #create an object of the class(constructor)
 
 
     def stream_tweets(self, fetched_tweets_filename, topics):
 
         listener = thestreamListener(fetched_tweets_filename)
+        auth=self.tweetauth.authenticateTwitter() #to call the function inside the class authenticateTwitterClass()
         streamit = Stream(auth, listener)
 
         streamit.filter(track=topics)
@@ -88,19 +100,13 @@ class thestreamListener(StreamListener):
 
 
     def on_error(self, status):
+        if status == 420:
+        #Return false to stop streaming when stream limit is reached
+            return False
         print(status)
 
 
-class authenticateTwitterClass():
-    """
-	reads from credentialstwitter file that contains the keys and access tokens
-	"""
 
-    def authenticateTwitter(self):
-        auth = OAuthHandler(credentialstwitter.CONSUMER_KEY, credentialstwitter.CONSUMER_SECRET)
-        auth.set_access_token(credentialstwitter.ACCESS_TOKEN, credentialstwitter.ACCESS_TOKEN_SECRET)
-
-        return auth
 
 if __name__ == '__main__':
 
@@ -109,7 +115,7 @@ if __name__ == '__main__':
 
     api = API(wait_on_rate_limit_notify=True)
 
-    auth = authenticateTwitterClass().authenticateTwitter()
+    #auth = authenticateTwitterClass().authenticateTwitter()
 
     twitter_streamer = TwitterStreamer()
     twitter_streamer.stream_tweets(fetched_tweets_filename, topics)
