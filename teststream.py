@@ -10,7 +10,7 @@ import credentialstwitter
 
 class authenticateTwitterClass():
     """
-	reads from credentialstwitter file that contains the keys and access tokens
+	reads from credentialstwitter file that contains the keys and access tokens.
 	"""
 
     def authenticateTwitter(self):
