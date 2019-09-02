@@ -60,7 +60,9 @@ class thestreamListener(StreamListener):
             twitter_user_name = data['user']['screen_name']
             created_at = data['created_at']
             tweet = data['text']
-            retweet_count=data['retweet_count']
+            #retweet_count=data['retweet_count']
+            place = data['place']
+
 
             #print(data)
             #if 'extended_tweet' in data and 'RT @' not in data['extended_tweet']['full_text'].encode('utf-8'):
@@ -81,11 +83,12 @@ class thestreamListener(StreamListener):
             #     retweetstatus_user = ""
             #     retweetstatus_name = ""
 
-            print(tweet_topics,"§",user_id,"§",twitter_user_name,"§",user_name,"§",tweet,"§",retweet_count,"§",created_at,)
+            print(tweet_topics,"§",user_id,"§",twitter_user_name,"§",user_name,"§",tweet,"§",created_at,)
+
             #datajson=tweet_topics,user_id,twitter_user_name,user_name,tweet,retweetstatus_user,retweetstatus_name,created_at
-            #print(datajson)
+            #print(data)
             with open(self.fetched_tweets_filename, 'a') as tf:
-                tf.write(str(tweet_topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(retweet_count)+"§"+str(created_at)+"\n")
+                tf.write(str(tweet_topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(created_at)+"\n")
             return True
 
             # Load it into a table in db
