@@ -60,32 +60,32 @@ class thestreamListener(StreamListener):
             twitter_user_name = data['user']['screen_name']
             created_at = data['created_at']
             tweet = data['text']
+            retweet_count=data['retweet_count']
 
             #print(data)
             #if 'extended_tweet' in data and 'RT @' not in data['extended_tweet']['full_text'].encode('utf-8'):
-            if 'retweeted_status' in data :#and 'RT @' not in data.extended_tweet.['full_text']:
+            # if 'retweeted_status' in data :#and 'RT @' not in data.extended_tweet.['full_text']:
+            #
+            #
+            #     #print("its a retweet",twitter_user_name)
+            #     retweetstatus_user = data['retweeted_status']['user']['id']
+            #     retweetstatus_name = data['retweeted_status']['user']['name']
+            #     #print(data)
+            #     #print(data['extended_tweet'])
+            #
+            #
+            # else:
+            #     #print("its not a retweet")
+            #     #print(data['text'])
+            #     #print(data['extended_tweet']['full_text'])
+            #     retweetstatus_user = ""
+            #     retweetstatus_name = ""
 
-
-                #print("its a retweet",twitter_user_name)
-                retweetstatus_user = data['retweeted_status']['user']['id']
-                retweetstatus_name = data['retweeted_status']['user']['name']
-                #print(data)
-                #print(data['extended_tweet'])
-
-
-            else:
-                #print("its not a retweet")
-                #print(data['text'])
-                #print(data['extended_tweet']['full_text'])
-                retweetstatus_user = ""
-                retweetstatus_name = ""
-
-            print(tweet_topics,"§",user_id,"§",twitter_user_name,"§",user_name,"§",tweet,"§",retweetstatus_user
-                  ,"§",retweetstatus_name,"§",created_at,)
+            print(tweet_topics,"§",user_id,"§",twitter_user_name,"§",user_name,"§",tweet,"§",retweet_count,"§",created_at,)
             #datajson=tweet_topics,user_id,twitter_user_name,user_name,tweet,retweetstatus_user,retweetstatus_name,created_at
             #print(datajson)
             with open(self.fetched_tweets_filename, 'a') as tf:
-                tf.write(str(tweet_topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(retweetstatus_user)+"§"+str(retweetstatus_name)+"§"+str(created_at)+"\n")
+                tf.write(str(tweet_topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(retweet_count)+"§"+str(created_at)+"\n")
             return True
 
             # Load it into a table in db
