@@ -10,14 +10,27 @@ try:
                                   port = postgrescredentials.port,
                                   database = postgrescredentials.database)
     cursor = connection.cursor()
+
     # Print PostgreSQL Connection properties
-    print ( connection.get_dsn_parameters(),"\n")
+    #print ( connection.get_dsn_parameters(),"\n")
     # Print PostgreSQL version
-    cursor.execute("SELECT version();")
-    record = cursor.fetchone()
-    print("You are connected to - ", record,"\n")
+    #cursor.execute("SELECT version();")
+    ##print("You are connected to - ", record,"\n")
+
+    insert_sql = "INSERT INTO testme3 (something) VALUES (%s);"
+    insert_values = ('test insert into table')
+
+    cursor.execute(insert_sql, (insert_values,))
+
+
+    connection.commit()
+
+    count = cursor.rowcount
+    print(count, "Record inserted successfully into mobile table")
+
+
 except (Exception, psycopg2.Error) as error :
-    print ("Error while connecting to PostgreSQL", error)
+    print ("Failed to insert into table", error)
 finally:
     #closing database connection.
         if(connection):

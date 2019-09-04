@@ -83,12 +83,14 @@ class thestreamListener(StreamListener):
             #     retweetstatus_user = ""
             #     retweetstatus_name = ""
 
-            print(tweet_topics,"§",user_id,"§",twitter_user_name,"§",user_name,"§",tweet,"§",created_at,)
+            #print(tweet_topics,"§",user_id,"§",twitter_user_name,"§",user_name,"§",tweet,"§",created_at,)
 
             #datajson=tweet_topics,user_id,twitter_user_name,user_name,tweet,retweetstatus_user,retweetstatus_name,created_at
+            print(user_id)
             #print(data)
             with open(self.fetched_tweets_filename, 'a') as tf:
-                tf.write(str(tweet_topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(created_at)+"\n")
+                tf.write(str(user_id)+"\n")
+                #tf.write(str(tweet_topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(created_at)+"\n")
             return True
 
             # Load it into a table in db

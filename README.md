@@ -13,13 +13,14 @@ Milestones:
 4. Extract tweets from twitter's API JSON format << Done &#10004;
 5. Write tweets into text delimited text file (just another option to store data instead of db) << Done &#10004;
 6. Setup Docker for Postgresql(way better than a vm imho) << Done &#10004;
-7. Design and create db tables to store tweets.(maybe create tables on the fly based on analysis topic for future enhancement) << WIP &#128736;
-8. Establish database connection to Postgresql with psycopg2 << WIP &#128736;
-9. More to come...
+7. Design and create db tables to store tweets.(maybe create tables on the fly based on analysis topic for future enhancement) << Done &#10004;
+8. Establish database connection to Postgresql with psycopg2 and test insert into table<< Done &#10004;
+9. Test load tweets into table << WIP &#128736;
+10. More to come...
 
 
-Current project status: Printing to screen and writing into a delimited text file.<br>
-Next milestone: Db connection using psycopg2 adapter and pumping tweets into a db.
+Current project status: Test load tweets into table. <br>
+Next milestone: add db feature into main program.
 
 Ps: Stay tuned for more updates! 
 
