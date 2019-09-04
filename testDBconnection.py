@@ -26,7 +26,7 @@ try:
     connection.commit()
 
     count = cursor.rowcount
-    print(count, "Record inserted successfully into mobile table")
+    print(count, "Record inserted successfully into TEST table")
 
 
 except (Exception, psycopg2.Error) as error :
