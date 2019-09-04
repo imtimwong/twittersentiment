@@ -1,12 +1,14 @@
 #! /usr/local/bin/python3.7
 
 import psycopg2
+import postgrescredentials
+
 try:
-    connection = psycopg2.connect(user = "tpusr4",
-                                  password = "twitter4",
-                                  host = "127.0.0.1",
-                                  port = "5432",
-                                  database = "twittersent4")
+    connection = psycopg2.connect(user = postgrescredentials.user,
+                                  password = postgrescredentials.password,
+                                  host = postgrescredentials.host,
+                                  port = postgrescredentials.port,
+                                  database = postgrescredentials.database)
     cursor = connection.cursor()
     # Print PostgreSQL Connection properties
     print ( connection.get_dsn_parameters(),"\n")
