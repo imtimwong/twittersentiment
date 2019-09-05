@@ -6,7 +6,7 @@
 
 Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feature1/streamtweets.py">streamtweets.py</a>.
 
-Milestones: 
+<h3>Milestones:</h3> 
 1. Apply for twitter developer account and credentials. << Done &#10004;
 2. Build basic twitter streamer with authentication and print tweets to screen using Tweepy << Done &#10004;
 3. Seperate features into different classes to enhance reusability << Done &#10004;
