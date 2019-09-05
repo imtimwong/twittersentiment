@@ -17,8 +17,9 @@ try:
     #cursor.execute("SELECT version();")
     ##print("You are connected to - ", record,"\n")
 
-    insert_sql = "INSERT INTO testme3 (something) VALUES (%s);"
-    insert_values = ('test insert into table')
+    #insert_sql = "INSERT INTO testme3 (something) VALUES (%s);"
+    insert_sql = "INSERT INTO testme4 (something) VALUES (%s) ON CONFLICT(something) DO NOTHING;"
+    insert_values = ('test insert into table12')
 
     cursor.execute(insert_sql, (insert_values,))
 
@@ -26,7 +27,7 @@ try:
     connection.commit()
 
     count = cursor.rowcount
-    print(count, "Record inserted successfully into mobile table")
+    print(count, "Record inserted successfully into TEST table")
 
 
 except (Exception, psycopg2.Error) as error :
