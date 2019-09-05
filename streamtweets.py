@@ -89,36 +89,43 @@ class thestreamListener(StreamListener):
 
 class load_into_db():
 
+    # def __init__(self, count=0):
+    #     self.counter = count
+
     def load_tweets(self,topics, user_id, twitter_user_name, user_name, tweet, created_at):
 
-        try:
-            #reads from postgresl credentials file to connect to db
-            connection = psycopg2.connect(user=postgrescredentials.user,
-                                          password=postgrescredentials.password,
-                                          host=postgrescredentials.host,
-                                          port=postgrescredentials.port,
-                                          database=postgrescredentials.database)
-            cursor = connection.cursor()
 
 
-            cursor.execute("INSERT INTO TWITTER_USR (USR_ID,USR_NM,TWITTER_USR_NM) VALUES (%s,%s,%s) ON CONFLICT(USR_ID) DO NOTHING;",(user_id,user_name,twitter_user_name))
+        #try:
+        #reads from postgresl credentials file to connect to db
+        connection = psycopg2.connect(user=postgrescredentials.user,
+                                      password=postgrescredentials.password,
+                                      host=postgrescredentials.host,
+                                      port=postgrescredentials.port,
+                                      database=postgrescredentials.database)
+        cursor = connection.cursor()
+        cursor2 = connection.cursor()
 
-            cursor.execute("INSERT INTO TWEETS (USR_ID,TOPICS,TWEET_TEXT,CREATED_AT) VALUES (%s,%s,%s,%s);",(user_id,topics,tweet,created_at))
 
-            connection.commit()
+        cursor.execute("INSERT INTO TWITTER_USR (USR_ID,USR_NM,TWITTER_USR_NM) VALUES (%s,%s,%s) ON CONFLICT(USR_ID) DO NOTHING;",(user_id,user_name,twitter_user_name))
 
-            count = cursor.rowcount
-            print(count, "Record inserted successfully into table")
+        cursor2.execute("INSERT INTO TWEETS (USR_ID,TOPICS,TWEET_TEXT,CREATED_AT) VALUES (%s,%s,%s,%s);",(user_id,topics,tweet,created_at))
+
+        connection.commit()
 
 
-        except (Exception, psycopg2.Error) as error:
-            print("Failed to insert into table", error)
-        finally:
-            # closing database connection.
-            if (connection):
-                cursor.close()
-                connection.close()
-                print("PostgreSQL connection is closed")
+        count = cursor2.rowcount
+        print(count, "Record inserted successfully into table")
+
+
+    # except (Exception, psycopg2.Error) as error:
+    #     print("Failed to insert into table", error)
+    # finally:
+    #     # closing database connection.
+    #     if (connection):
+        cursor.close()
+        connection.close()
+        #print("PostgreSQL connection is closed")
 
 
 
