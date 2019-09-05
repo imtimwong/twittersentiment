@@ -64,6 +64,7 @@ class thestreamListener(StreamListener):
 
             with open(self.fetched_tweets_filename, 'a') as tf:
                 tf.write(str(data))
+                # tf.write(str(topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(created_at)+"\n")
             #return True
 
             # Load it into a table in db
