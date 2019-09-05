@@ -17,7 +17,7 @@ Milestones:
 8. Establish database connection to Postgresql with psycopg2 and test insert into table<< Done &#10004;
 9. Test load tweets into table << Done &#10004;
 10. Running program and streaming and collecting tweets into db << WIP &#128736;
-More to come...
+11. More to come...
 
 
 Current project status: Streaming tweets into db <br>
