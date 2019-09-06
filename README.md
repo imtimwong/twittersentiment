@@ -5,8 +5,8 @@
 <p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis. 
 
 <h3>Requirements:</h3>
-<p>Tech used: Python, Postgresql, Docker Container, Pycharm)</p>
-<p>libraries: tweepy, psycopg2, pandas )</p>
+<p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
+<p>libraries: tweepy, psycopg2, pandas</p>
 
 Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feature1/streamtweets.py">streamtweets.py</a> and <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>.
 
