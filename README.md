@@ -6,14 +6,14 @@
 
 <h3>Requirements:</h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
-<p>libraries: tweepy, psycopg2, pandas</p>
+<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas</p>
 
 Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feature1/streamtweets.py">streamtweets.py</a> and <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>.
 
 <h3>Milestones:</h3> 
 <ol>
 <li>Apply for twitter developer account and credentials. << Done &#10004;</li>
-<li>Build basic twitter streamer with authentication and print tweets to screen using Tweepy << Done &#10004;</li>
+<li>Build basic twitter streamer with authentication and print tweets to screen using <a href="http://docs.tweepy.org/en/latest/">tweepy</a> << Done &#10004;</li>
 <li>Seperate features into different classes to enhance reusability << Done &#10004;</li>
 <li>Extract tweets from twitter's API JSON format << Done &#10004;</li>
 <li>Write tweets into text file (just another option to store data instead of db) << Done &#10004;</li>
