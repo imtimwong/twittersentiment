@@ -27,13 +27,13 @@ class TwitterStreamer():
     To stream tweets live
     """
     def __init__(self):
-        self.tweetauth = authenticateTwitterClass() #create an object of the class(constructor)
+        self.tweetauth = authenticateTwitterClass()
 
 
     def stream_tweets(self, fetched_tweets_filename, topics):
 
         listener = thestreamListener(fetched_tweets_filename)
-        auth=self.tweetauth.authenticateTwitter() #to call the function inside the class authenticateTwitterClass()
+        auth=self.tweetauth.authenticateTwitter()
         streamit = Stream(auth, listener)
 
         streamit.filter(languages=["en"],track=[topics])
