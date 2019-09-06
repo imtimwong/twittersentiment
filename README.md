@@ -2,7 +2,11 @@
 <h1>Personal project to analyse tweets for sentiment analysis</h1>
 
 <h2>Why this project?</h2>
-<p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis. (Tech used: Python, Postgresql, Docker Container, tweepy, psycopg2, pandas, Pycharm)
+<p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis. 
+
+<h3>Requirements:</h3>
+<p>Tech used: Python, Postgresql, Docker Container, Pycharm)</p>
+<p>libraries: tweepy, psycopg2, pandas )</p>
 
 Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feature1/streamtweets.py">streamtweets.py</a> and <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>.
 
