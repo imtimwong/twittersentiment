@@ -19,7 +19,7 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <li>Write tweets into text file (just another option to store data instead of db) << Done &#10004;</li>
 <li>Setup Docker for Postgresql(way better than a VM imho) << Done &#10004;</li>
 <li>Design and create db tables to store tweets.(maybe create tables on the fly based on analysis topic for future enhancement) << Done &#10004;</li>
-<li>Establish database connection to Postgresql with psycopg2 and test insert into table<< Done &#10004;</li>
+<li>Establish database connection to Postgresql with <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a> and test insert into table<< Done &#10004;</li>
 <li>Test load tweets into table << Done &#10004;</li>
 <li> Running program and streaming and collecting tweets into db << WIP &#128736;</li>
 <li> More to come...</li>
