@@ -21,12 +21,13 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <li>Design and create db tables to store tweets.(maybe create tables on the fly based on analysis topic for future enhancement) << Done &#10004;</li>
 <li>Establish database connection to Postgresql with <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a> and test insert into table<< Done &#10004;</li>
 <li>Test load tweets into table << Done &#10004;</li>
-<li> Running program and streaming and collecting tweets into db << WIP &#128736;</li>
+<li> Running program and streaming and collecting tweets into db << Done &#10004;</li>
+<li> Data preparation << WIP &#128736;</li>
 <li> More to come...</li>
 </ol>
 
-Current project status: Streaming tweets into db <br>
-Next milestone: data cleansing stage
+Current project status: data preparation and cleansing <br>
+Next milestone: data analysis
 
 Ps: Stay tuned for more updates! 
 
