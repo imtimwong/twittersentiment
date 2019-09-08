@@ -15,7 +15,12 @@ import pandas as pd
 
 sqlengine = db.create_engine('postgres+psycopg2://%s:%s@%s:%s/%s'%(postgrescredentials.user,postgrescredentials.password,postgrescredentials.host,postgrescredentials.port,postgrescredentials.database))
 
+con = sqlengine.connect()
 
+result = con.execute("SELECT TWEET_TEXT FROM TWEETS")
+
+for row in result:
+    print(row)
 
 
 
