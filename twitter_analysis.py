@@ -17,11 +17,21 @@ sqlengine = db.create_engine('postgres+psycopg2://%s:%s@%s:%s/%s'%(postgrescrede
 
 con = sqlengine.connect()
 
-result = con.execute("SELECT TWEET_TEXT FROM TWEETS")
+#https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html
 
-for row in result:
-    print(row)
+#s = db.select([tweets])
+#result = con.execute(s)
+#result = con.execute("SELECT TWEET_TEXT FROM TWEETS")
+s="SELECT * FROM TWEETS;"
 
+df = pd.read_sql(s,con, index_col="tweet_id")
+
+print(df.head(10))
+
+# for row in result:
+#     print(row[tweets.c.tweet_text])
+#
+# result.close()
 
 
 
