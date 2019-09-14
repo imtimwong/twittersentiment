@@ -13,6 +13,13 @@ import pandas as pd
 
 import re
 
+import nltk
+from nltk.corpus import (stopwords)
+
+
+
+
+
 
 
 sqlengine = db.create_engine('postgres+psycopg2://%s:%s@%s:%s/%s'%(postgrescredentials.user,postgrescredentials.password,postgrescredentials.host,postgrescredentials.port,postgrescredentials.database))
@@ -62,7 +69,7 @@ df['tweet_text'] = df['tweet_text'].replace(r'[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~]'
 # print(cleanedtweet)
 # df['tweet_text']=cleanedtweet
 #
-print(df['tweet_text'].iloc[2])
+print(df['tweet_text'].iloc[7])
 
 # for row in df:
 #     cleanedtweet = str(df['tweet_text'])
@@ -78,5 +85,24 @@ print(df['tweet_text'].iloc[2])
 # result.close()
 
 
+
+#for s in sentences:
+#    print(" ".join(text_processor.pre_process_doc(s)))
+
+#https://stackoverflow.com/questions/29523254/python-remove-stop-words-from-pandas-dataframe
+stop_words_eng = stopwords.words('english')
+#df['tweet_text'] = df['tweet_text'].str.lower()
+df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop_words_engß)]))
+
+filtered_sentence = [w for w in df['tweet_text'] if not w in stop_words]
+
+filtered_sentence = []
+
+for w in word_tokens:
+    if w not in stop_words:
+        filtered_sentence.append(w)
+
+
+print(df['tweet_text'].iloc[7])
 
 #if __name__ == '__main__':
