@@ -92,7 +92,10 @@ print(df['tweet_text'].iloc[7])
 #https://stackoverflow.com/questions/29523254/python-remove-stop-words-from-pandas-dataframe
 stop_words_eng = stopwords.words('english')
 #df['tweet_text'] = df['tweet_text'].str.lower()
-df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop_words_engß)]))
+#lamda - hidden function
+#apply is used to apply the lamda function on one column
+#split the tweet using space in x.split() then check for if its not a stop word then join it together again with space
+df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop_words_eng)]))
 
 filtered_sentence = [w for w in df['tweet_text'] if not w in stop_words]
 
