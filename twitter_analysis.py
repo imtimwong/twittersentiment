@@ -146,11 +146,12 @@ file = os.getcwd()
 print(file)
 #text = df.tweet_text
 #print(textdf)
-#text = df.tweet_text.to_string( index=False, header=False)
+text = df.tweet_text.to_string( index=False, header=False)
+# this one ABOVEeee coorect
 #print(text)
 
-text = pd.Series([t for t in df.tweet_text]).str.cat(sep=' ')
-text = pd.Series([t for t in df.tweet_text]).str.cat(sep=' ')
+#text = pd.Series([t for t in df.tweet_text]).str.cat(sep=' ')
+#text = pd.Series([str(t) for t in df.tweet_text]).str.cat(sep=' \',')
 
 #wordcloud2 = WordCloud().generate(' '.join(text2['Crime Type']))
 
@@ -162,7 +163,7 @@ wordcloud = WordCloud(
     height = 2000,
     background_color = 'black',
     stopwords = STOPWORDS
-).generate(str(text))
+).generate(text)
 #generate(' '.join(str(df['tweet_text']))
 fig = plt.figure(
     figsize = (40, 30),
