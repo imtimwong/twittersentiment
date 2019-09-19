@@ -25,10 +25,12 @@ import os
 
 
 
+class extractDB():
+
+    def sqlconnect(self):
 
 
-
-sqlengine = db.create_engine('postgres+psycopg2://%s:%s@%s:%s/%s'%(postgrescredentials.user,postgrescredentials.password,postgrescredentials.host,postgrescredentials.port,postgrescredentials.database))
+    sqlengine = db.create_engine('postgres+psycopg2://%s:%s@%s:%s/%s'%(postgrescredentials.user,postgrescredentials.password,postgrescredentials.host,postgrescredentials.port,postgrescredentials.database))
 
 con = sqlengine.connect()
 
@@ -83,6 +85,7 @@ df['tweet_text'] = df['tweet_text'].replace(r'[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~]'
 # df['tweet_text']=cleanedtweet
 #
 print(df['tweet_text'].iloc[50])
+print(df['tweet_text'].iloc[67])
 
 # for row in df:
 #cleanedtweet = str(df['tweet_text'])
@@ -117,12 +120,15 @@ stop_words_eng = stopwords.words('english')
 
 df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop_words_eng)]))
 print(df['tweet_text'].iloc[50])
+print(df['tweet_text'].iloc[67])
 
+
+#https://towardsdatascience.com/the-real-world-as-seen-on-twitter-sentiment-analysis-part-one-5ac2d06b63fb
 tweet = word_tokenize(str(df['tweet_text'].iloc[50]))
 
 print(tweet)
 
-df['tweet_text'] = df['tweet_text'].apply(word_tokenize)
+#df['tweet_text'] = df['tweet_text'].apply(word_tokenize)
 
 #filtered_sentence = [w for w in df['tweet_text'] if not w in stop_words]
 
@@ -134,7 +140,30 @@ df['tweet_text'] = df['tweet_text'].apply(word_tokenize)
 
 #print(df['tweet_text'])
 
+
+
 print(df['tweet_text'].iloc[50])
+
+
+# from textblob import TextBlob
+#
+# textanalysis = df.tweet_text.to_string( index=False, header=False)
+#
+# #def analyze_sentiment(self, tweet):
+# analysis = TextBlob(textanalysis)
+#
+# if analysis.sentiment.polarity > 0:
+#     #return 1
+#     print(1)
+# elif analysis.sentiment.polarity == 0:
+#     #return 0
+#     print(0)
+# else:
+#     #return -1
+#     print(-1)
+
+
+
 
 
 from wordcloud import WordCloud, STOPWORDS
@@ -150,19 +179,23 @@ text = df.tweet_text.to_string( index=False, header=False)
 # this one ABOVEeee coorect
 #print(text)
 
-#text = pd.Series([t for t in df.tweet_text]).str.cat(sep=' ')
+#text2 = pd.Series([t for t in df.tweet_text]).str.cat(sep=' ')
 #text = pd.Series([str(t) for t in df.tweet_text]).str.cat(sep=' \',')
 
 #wordcloud2 = WordCloud().generate(' '.join(text2['Crime Type']))
 
 #text = ' '.join(str(w) for w in df.tweet_text)
 
+#print(text)
+#print(text2)
+
 
 wordcloud = WordCloud(
     width = 3000,
     height = 2000,
     background_color = 'black',
-    stopwords = STOPWORDS
+    #stopwords = STOPWORDS
+    stopwords=['taylor swift']
 ).generate(text)
 #generate(' '.join(str(df['tweet_text']))
 fig = plt.figure(
@@ -173,12 +206,37 @@ plt.imshow(wordcloud, interpolation = 'bilinear')
 plt.axis('off')
 plt.tight_layout(pad=0)
 
-wcpath=file+"/first_review.png"
+wcpath=file+"/all_tweets.png"
 
 print(wcpath)
 
 wordcloud.to_file(wcpath)
-plt.show()
+#plt.show()
+
+# # create a word frequency dictionary
+# wordfreq = Counter(df.tweet_text.to_string( index=False, header=False))
+#
+# wordcloud = WordCloud(
+#     width = 3000,
+#     height = 2000,
+#     background_color = 'black',
+#     #stopwords = STOPWORDS
+# ).generate_from_frequencies(text)
+# #generate(' '.join(str(df['tweet_text']))
+# fig = plt.figure(
+#     figsize = (40, 30),
+#     facecolor = 'k',
+#     edgecolor = 'k')
+# plt.imshow(wordcloud, interpolation = 'bilinear')
+# plt.axis('off')
+# plt.tight_layout(pad=0)
+#
+# wcpath=file+"/tweets_freq.png"
+#
+# print(wcpath)
+#
+# wordcloud.to_file(wcpath)
+
 
 #if __name__ == '__main__':
 
