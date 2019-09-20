@@ -6,7 +6,7 @@
 
 <h3>Requirements:</h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
-<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a></p>
+<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy</p>
 
 Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feature1/streamtweets.py">streamtweets.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a>
 
@@ -27,6 +27,8 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <li> Getting sentiment score of each tweet with <a href="https://textblob.readthedocs.io/en/dev/"> TextBlob</a> << Done &#10004;</li>
 
 <li> Generating wordclouds based on sentiment score << Done &#10004;</li>
+<li> Generating word count frequency graph << WIP &#128736;</li>
+<li> Generating pie chart to show sentiment type : positive, negative, neutral </li>
 <li> More to come...</li>
 </ol>
 
