@@ -182,7 +182,7 @@ class data_preparation():
 
 class wordcloud():
 
-    def wordclouddraw(self,df):
+    def wordclouddraw(self,df,sent):
 
 
 
@@ -192,7 +192,39 @@ class wordcloud():
         print(file)
         #text = df.tweet_text
         #print(textdf)
-        text = df.tweet_text.to_string( index=False, header=False)
+
+        if sent == 'positive':
+
+            #sentiment_value = 1
+            text_filtered_sentiment = df['sentiment'] == 1
+            text_filtered_sentiment2 = df[text_filtered_sentiment]
+            text = text_filtered_sentiment2.tweet_text.to_string(index=False, header=False)
+            filename = "/pos_tweets.png"
+
+        elif sent == 'negative':
+            #sentiment_value = -1
+            text_filtered_sentiment = df['sentiment'] == -1
+            text_filtered_sentiment2 = df[text_filtered_sentiment]
+            text = text_filtered_sentiment2.tweet_text.to_string(index=False, header=False)
+            filename = "/neg_tweets.png"
+
+        else:
+
+            text = df.tweet_text.to_string( index=False, header=False)
+            filename = "/all_tweets.png"
+
+        # sentiment_value = 1
+        # is_positive = df['sentiment'] == 1
+        # is_positive2 = df[is_positive]
+        # text = is_positive2.tweet_text.to_string(index=False, header=False)
+        # filename = "/pos_tweets.png"
+
+        #print(is_positive2)
+
+
+        #print(text_filtered_sentiment)
+
+        #text = text_filtered_sentiment.tweet_text.to_string( index=False, header=False)
         # this one ABOVEeee coorect
         #print(text)
 
@@ -223,7 +255,7 @@ class wordcloud():
         plt.axis('off')
         plt.tight_layout(pad=0)
 
-        wcpath=file+"/all_tweets.png"
+        wcpath=file+filename
 
         print(wcpath)
 
@@ -323,7 +355,7 @@ if __name__ == '__main__':
 
     df['sentiment'] = np.array([senti.analyse_sentiment(df) for df in df['sentiment']])
 
-    print(df)
+    #print(df)
 
 
     #df['sentiment'] = np.array([tweet_analyzer.analyze_sentiment(tweet) for tweet in df['tweets']])
@@ -336,7 +368,14 @@ if __name__ == '__main__':
     print(df['tweet_text'].iloc[50])
     print(df['tweet_text'].iloc[60])
 
-    genwordcloud.wordclouddraw(df)
+
+    #genwordcloud.wordclouddraw(pd.Series([g for g in df[df.sentiment == 1].tweet_text]).str.cat(sep=' '))
+
+    #word_cloud(pd.Series([t for t in tweet_table[tweet_table.sentiment == "Positive"].tweet]).str.cat(sep=' '))
+
+    genwordcloud.wordclouddraw(df, sent="all")
+    genwordcloud.wordclouddraw(df, sent="positive")
+    genwordcloud.wordclouddraw(df, sent="negative")
 
 
 
