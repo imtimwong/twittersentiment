@@ -27,6 +27,8 @@ import os
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
+from textblob import TextBlob
+
 
 class extractDB():
 
@@ -95,7 +97,7 @@ class data_preparation():
 # df['tweet_text']=cleanedtweet
 #
         print(df['tweet_text'].iloc[50])
-        print(df['tweet_text'].iloc[67])
+        print(df['tweet_text'].iloc[60])
 
 # for row in df:
 #cleanedtweet = str(df['tweet_text'])
@@ -135,15 +137,21 @@ class data_preparation():
 
         df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop_words_eng)]))
         print(df['tweet_text'].iloc[50])
-        print(df['tweet_text'].iloc[67])
+        print(df['tweet_text'].iloc[60])
+
+        return df
+
+
+
+
 
 
         #https://towardsdatascience.com/the-real-world-as-seen-on-twitter-sentiment-analysis-part-one-5ac2d06b63fb
-        tweet = word_tokenize(str(df['tweet_text'].iloc[50]))
+        #tweet = word_tokenize(str(df['tweet_text'].iloc[50])) this works too
 
-        print(tweet)
+        #print(tweet)
 
-        #df['tweet_text'] = df['tweet_text'].apply(word_tokenize)
+        #df['tweet_text'] = df['tweet_text'].apply(word_tokenize) this works
 
         #filtered_sentence = [w for w in df['tweet_text'] if not w in stop_words]
 
@@ -159,24 +167,15 @@ class data_preparation():
 
         print(df['tweet_text'].iloc[50])
 
+        #print(df['tweet_text'])
 
-        # from textblob import TextBlob
+
+        #
         #
         # textanalysis = df.tweet_text.to_string( index=False, header=False)
         #
-        # #def analyze_sentiment(self, tweet):
-        # analysis = TextBlob(textanalysis)
-        #
-        # if analysis.sentiment.polarity > 0:
-        #     #return 1
-        #     print(1)
-        # elif analysis.sentiment.polarity == 0:
-        #     #return 0
-        #     print(0)
-        # else:
-        #     #return -1
-        #     print(-1)
-        return df
+
+
 
 
 
@@ -256,17 +255,87 @@ class wordcloud():
         # wordcloud.to_file(wcpath)
 
 
+
+# class sentimentanalysis():
+#
+#
+#     def sentiment_analysis(self, df):
+#
+#         textcleaned = df['tweet_text']
+#
+#         #print(textcleaned)
+#
+#         #textcleaned = df.tweet_text.to_string(index=False, header=False)
+#
+#
+#
+#
+#         analysis = TextBlob(textcleaned)
+#
+#
+#         if analysis.sentiment.polarity > 0:
+#             return 1
+#         elif analysis.sentiment.polarity == 0:
+#
+#             return 0
+#         else:
+#             return -1
+
+class sentimentanalysis():
+
+
+    def analyse_sentiment(self, df):
+
+
+        sentiment = df
+
+        if sentiment > 0:
+            return 1
+        elif sentiment == 0:
+            return 0
+        else:
+            return -1
+
+
 if __name__ == '__main__':
 
 
     selectdb = extractDB()
     datapreparation = data_preparation()
     genwordcloud = wordcloud()
+    senti=sentimentanalysis()
 
 
-    df=selectdb.sqlconnect()
+    df = selectdb.sqlconnect()
     datapreparation.preprocessing(df)
     datapreparation.remove_stopwords(df)
+    #datapreparation.analyze_sentiment(df)
+
+
+    #df['sentiment'] = np.array([datapreparation.analyze_sentiment(df) for df in df['tweet_text']])
+    #df['sentiment'] = df['tweet_text'].apply(lambda tweet: senti.sentiment_analysis(df).sentiment)
+
+    #df['sentiment'] = df.tweet_text.apply(lambda tweet_text: TextBlob(tweet_text).sentiment.polarity)
+
+    #print(df)
+
+    df['sentiment'] = df.tweet_text.apply(lambda tweet_text: TextBlob(tweet_text).sentiment.polarity)
+
+    df['sentiment'] = np.array([senti.analyse_sentiment(df) for df in df['sentiment']])
+
+    print(df)
+
+
+    #df['sentiment'] = np.array([tweet_analyzer.analyze_sentiment(tweet) for tweet in df['tweets']])
+
+
+    #df['sentiment'] = df.tweet_text.apply(lambda tweet_text: TextBlob(tweet_text))
+    #appended_data['sentiment'] = appended_data.body.apply(lambda body: TextBlob(body).sentiment)
+
+    #print(df.tweet_text.head(30),df.sentiment.head(30))
+    print(df['tweet_text'].iloc[50])
+    print(df['tweet_text'].iloc[60])
+
     genwordcloud.wordclouddraw(df)
 
 
