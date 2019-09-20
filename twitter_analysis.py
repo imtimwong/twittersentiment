@@ -38,13 +38,9 @@ class extractDB():
 
         con = sqlengine.connect()
 
-#https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html
+        #https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html
 
-#s = db.select([tweets])
-#result = con.execute(s)
-#result = con.execute("SELECT TWEET_TEXT FROM TWEETS")
-
-#put all preprocessing into one class later
+        #put all preprocessing into one class later
         s="SELECT * FROM TWEETS;"
 
 
@@ -54,8 +50,7 @@ class extractDB():
         return df
 
 
-#print(df['tweet_text'])
-#print(df.tweet_text.to_string(index=False, header=False))
+        #print(df['tweet_text'])
 
 
 class data_preparation():
@@ -79,47 +74,10 @@ class data_preparation():
         df['tweet_text'] = df['tweet_text'].replace(r'[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~]', '', regex=True)
 
 
-
-#print(df.head(10))
-#print(df.head(10))
-#print(df['tweet_text'].str.replace('RT', ''))
-
-# cleanedtweet = str(df['tweet_text'])
-#
-# cleanedtweet = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", cleanedtweet).split())
-#
-# #aiya just copy fucj
-# #def clean_tweet(self, cleaned=df['tweet_text']):
-# #    return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", df['tweet_text']).split())
-#
-# #print(df['tweet_text'])
-# print(cleanedtweet)
-# df['tweet_text']=cleanedtweet
-#
         print(df['tweet_text'].iloc[50])
         print(df['tweet_text'].iloc[60])
 
-# for row in df:
-#cleanedtweet = str(df['tweet_text'])
-# 
-#     cleanedtweet = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", cleanedtweet).split())
-#     df['tweet_text'] = cleanedtweet
 
-#df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", cleanedtweet).split()))
-#df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop_words_eng)]))
-# 
-#     print(df['tweet_text'])
-
-# for row in result:
-#     print(row[tweets.c.tweet_text])
-#
-# result.close()
-
-
-
-
-#for s in sentences:
-#    print(" ".join(text_processor.pre_process_doc(s)))
         return df
 
 
@@ -142,40 +100,12 @@ class data_preparation():
         return df
 
 
-
-
-
-
         #https://towardsdatascience.com/the-real-world-as-seen-on-twitter-sentiment-analysis-part-one-5ac2d06b63fb
         #tweet = word_tokenize(str(df['tweet_text'].iloc[50])) this works too
 
         #print(tweet)
 
         #df['tweet_text'] = df['tweet_text'].apply(word_tokenize) this works
-
-        #filtered_sentence = [w for w in df['tweet_text'] if not w in stop_words]
-
-        #filtered_sentence = []
-
-        # for w in word_tokens:
-        #     if w not in stop_words:
-        #         filtered_sentence.append(w)
-
-        #print(df['tweet_text'])
-
-
-
-        print(df['tweet_text'].iloc[50])
-
-        #print(df['tweet_text'])
-
-
-        #
-        #
-        # textanalysis = df.tweet_text.to_string( index=False, header=False)
-        #
-
-
 
 
 
@@ -185,24 +115,19 @@ class wordcloud():
     def wordclouddraw(self,df,sent):
 
 
-
-        file = os.getcwd()
-
-
-        print(file)
         #text = df.tweet_text
         #print(textdf)
 
         if sent == 'positive':
 
-            #sentiment_value = 1
+            #https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
             text_filtered_sentiment = df['sentiment'] == 1
             text_filtered_sentiment2 = df[text_filtered_sentiment]
             text = text_filtered_sentiment2.tweet_text.to_string(index=False, header=False)
             filename = "/pos_tweets.png"
 
         elif sent == 'negative':
-            #sentiment_value = -1
+
             text_filtered_sentiment = df['sentiment'] == -1
             text_filtered_sentiment2 = df[text_filtered_sentiment]
             text = text_filtered_sentiment2.tweet_text.to_string(index=False, header=False)
@@ -213,31 +138,14 @@ class wordcloud():
             text = df.tweet_text.to_string( index=False, header=False)
             filename = "/all_tweets.png"
 
-        # sentiment_value = 1
-        # is_positive = df['sentiment'] == 1
-        # is_positive2 = df[is_positive]
-        # text = is_positive2.tweet_text.to_string(index=False, header=False)
-        # filename = "/pos_tweets.png"
-
-        #print(is_positive2)
-
-
-        #print(text_filtered_sentiment)
 
         #text = text_filtered_sentiment.tweet_text.to_string( index=False, header=False)
-        # this one ABOVEeee coorect
-        #print(text)
+        # this one above coorect
 
-        #text2 = pd.Series([t for t in df.tweet_text]).str.cat(sep=' ')
-        #text = pd.Series([str(t) for t in df.tweet_text]).str.cat(sep=' \',')
 
-        #wordcloud2 = WordCloud().generate(' '.join(text2['Crime Type']))
+        file = os.getcwd()
 
-        #text = ' '.join(str(w) for w in df.tweet_text)
-
-        #print(text)
-        #print(text2)
-
+        print(file)
 
         wordcloud = WordCloud(
             width = 3000,
@@ -288,31 +196,6 @@ class wordcloud():
 
 
 
-# class sentimentanalysis():
-#
-#
-#     def sentiment_analysis(self, df):
-#
-#         textcleaned = df['tweet_text']
-#
-#         #print(textcleaned)
-#
-#         #textcleaned = df.tweet_text.to_string(index=False, header=False)
-#
-#
-#
-#
-#         analysis = TextBlob(textcleaned)
-#
-#
-#         if analysis.sentiment.polarity > 0:
-#             return 1
-#         elif analysis.sentiment.polarity == 0:
-#
-#             return 0
-#         else:
-#             return -1
-
 class sentimentanalysis():
 
 
@@ -351,8 +234,11 @@ if __name__ == '__main__':
 
     #print(df)
 
+    #https: // stackoverflow.com / questions / 54588807 / loop - to - retrieve - sentiment - analysis - in -pandas - core - series - series
+    #add sentiment score into a new column in dataframe
     df['sentiment'] = df.tweet_text.apply(lambda tweet_text: TextBlob(tweet_text).sentiment.polarity)
 
+    #convert sentiment score into 1(positive),-1(negative) or 0(neutral)
     df['sentiment'] = np.array([senti.analyse_sentiment(df) for df in df['sentiment']])
 
     #print(df)
