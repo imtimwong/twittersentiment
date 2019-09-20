@@ -6,7 +6,7 @@
 
 <h3>Requirements:</h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
-<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a></p>
+<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a></p>
 
 Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feature1/streamtweets.py">streamtweets.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a>
 
@@ -22,11 +22,15 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <li>Establish database connection to Postgresql with <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a> and test insert into table<< Done &#10004;</li>
 <li>Test load tweets into table << Done &#10004;</li>
 <li> Running program and streaming and collecting tweets into db << Done &#10004;</li>
-<li> Data preparation << WIP &#128736;</li>
+<li> Data preparation (cleaning each tweet and removing stopwords with nltk) << Done &#10004;</li>
+
+<li> Getting sentiment score of each tweet with <a href="https://textblob.readthedocs.io/en/dev/"> TextBlob</a> << Done &#10004;</li>
+
+<li> Generating wordclouds based on sentiment score << Done &#10004;</li>
 <li> More to come...</li>
 </ol>
 
-Current project status: data preparation and cleansing <br>
+Current project status: data analysis <br>
 Next milestone: data analysis
 
 Ps: Stay tuned for more updates! 
