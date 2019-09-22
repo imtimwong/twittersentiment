@@ -172,29 +172,6 @@ class wordcloud():
         wordcloud.to_file(wcpath)
         #plt.show()
 
-        # # create a word frequency dictionary
-        # wordfreq = Counter(df.tweet_text.to_string( index=False, header=False))
-        #
-        # wordcloud = WordCloud(
-        #     width = 3000,
-        #     height = 2000,
-        #     background_color = 'black',
-        #     #stopwords = STOPWORDS
-        # ).generate_from_frequencies(text)
-        # #generate(' '.join(str(df['tweet_text']))
-        # fig = plt.figure(
-        #     figsize = (40, 30),
-        #     facecolor = 'k',
-        #     edgecolor = 'k')
-        # plt.imshow(wordcloud, interpolation = 'bilinear')
-        # plt.axis('off')
-        # plt.tight_layout(pad=0)
-        #
-        # wcpath=file+"/tweets_freq.png"
-        #
-        # print(wcpath)
-        #
-        # wordcloud.to_file(wcpath)
 
 
 
@@ -268,7 +245,7 @@ class wordfreq():
         plt.savefig(graphpath, format="png")
         #plt.show()
 
- 
+
 
 
 #https://towardsdatascience.com/natural-language-processing-count-vectorization-with-scikit-learn-e7804269bb5e
