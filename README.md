@@ -7,8 +7,8 @@
 
 <h2>Why this project?</h2>
 <p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis.<br>
-In the wake off
-For this project, we will be analysing sentiments on the yearly air pollution hitting mainly Malaysia, Singapore and Indonesia. Malaysia has been hit by worsening haze with some areas entering the "unhealthy" zone.
+
+For this project, we will be analysing sentiments on the yearly <a href="https://www.businessinsider.my/11-photos-of-the-haze-that-show-why-malaysias-pm-mahathir-is-writing-to-jokowi/">air pollution</a> hitting mainly Malaysia, Singapore and Indonesia. Malaysia has been hit by worsening haze with some areas entering the "unhealthy" zone.
 
 <h3>Requirements:</ h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
