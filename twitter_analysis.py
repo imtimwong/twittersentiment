@@ -41,7 +41,7 @@ class extractDB():
         #https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html
 
         #put all preprocessing into one class later
-        s="SELECT * FROM TWEETS;"
+        s="SELECT * FROM TWEETS_HAZE;"
 
 
         df = pd.read_sql(s,con, index_col="tweet_id")
@@ -72,6 +72,8 @@ class data_preparation():
         df['tweet_text'] = df['tweet_text'].replace(r'[0-9]+', '', regex=True)
         #removing special characters
         df['tweet_text'] = df['tweet_text'].replace(r'[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~]', '', regex=True)
+        # Removing tweet topic
+        df['tweet_text'] = df['tweet_text'].str.replace('haze', '')
 
 
         print(df['tweet_text'].iloc[50])
@@ -124,19 +126,19 @@ class wordcloud():
             text_filtered_sentiment = df['sentiment'] == 1
             text_filtered_sentiment2 = df[text_filtered_sentiment]
             text = text_filtered_sentiment2.tweet_text.to_string(index=False, header=False)
-            filename = "/pos_tweets.png"
+            filename = "/HAZE_pos_tweets.png"
 
         elif sent == 'negative':
 
             text_filtered_sentiment = df['sentiment'] == -1
             text_filtered_sentiment2 = df[text_filtered_sentiment]
             text = text_filtered_sentiment2.tweet_text.to_string(index=False, header=False)
-            filename = "/neg_tweets.png"
+            filename = "/HAZE_neg_tweets.png"
 
         else:
 
             text = df.tweet_text.to_string( index=False, header=False)
-            filename = "/all_tweets.png"
+            filename = "/HAZE_all_tweets.png"
 
 
         #text = text_filtered_sentiment.tweet_text.to_string( index=False, header=False)
@@ -152,14 +154,14 @@ class wordcloud():
             height = 2000,
             background_color = 'black',
             #stopwords = STOPWORDS
-            stopwords=['taylor swift']
+            stopwords=['haze']
         ).generate(text)
         #generate(' '.join(str(df['tweet_text']))
         fig = plt.figure(
             figsize = (40, 30),
             facecolor = 'k',
             edgecolor = 'k')
-        plt.imshow(wordcloud, interpolation = 'bilinear')
+        plt.imshow(wordcloud, interpolation = 'bilinear')#'hermite'
         plt.axis('off')
         plt.tight_layout(pad=0)
 
@@ -212,6 +214,100 @@ class sentimentanalysis():
         else:
             return -1
 
+import sklearn
+from sklearn.preprocessing import Normalizer
+from sklearn.feature_extraction.text import (
+    CountVectorizer,
+    TfidfVectorizer
+)
+#https://towardsdatascience.com/sentiment-analysis-with-text-mining-13dd2b33de27
+import collections
+import seaborn as sns
+sns.set(style="darkgrid")
+sns.set(font_scale=1.3)
+
+class wordfreq():
+
+    def vectorization(self, df, sent2):
+
+        countv = CountVectorizer()
+        bow = countv.fit_transform(df.tweet_text)
+        word_freq = dict(zip(countv.get_feature_names(), np.asarray(bow.sum(axis=0)).ravel()))
+        word_counter = collections.Counter(word_freq)
+        word_counter_df = pd.DataFrame(word_counter.most_common(30), columns=['word', 'freq'])
+
+        print("in vectorization")
+#https://www.drawingfromdata.com/how-to-rotate-axis-labels-in-seaborn-and-matplotlib
+
+        file = os.getcwd()
+        title = "Word Frequency for %s tweets" % sent2
+        fig, ax = plt.subplots(figsize=(10, 12))
+        sns.barplot(x="freq", y="word", data=word_counter_df, palette="PuBuGn_d", ax=ax)
+
+        plt.xticks(
+            rotation=90,
+            horizontalalignment='right',
+            fontweight='light',
+            #fontsize='x-large'
+            size = 14
+        )
+
+        plt.xlabel("Frequency", size=14);
+        plt.ylabel("30 more frequent words", size=14);
+
+        plt.title(title, size=18)
+        plt.grid(False);
+        plt.gca().spines["top"].set_visible(False);
+        plt.gca().spines["right"].set_visible(False);
+
+
+
+        #filename = "/%s_graph_all.png" #%sent2
+        filename = "/HAZE_graph_%s.png" %sent2
+        graphpath = file + filename
+        plt.savefig(graphpath, format="png")
+        #plt.show()
+
+    # # Vectorization for Data Visualization
+    # def vectorization(self,df):
+    #     # CountVectorizer will convert a collection of text documents to a matrix of token counts
+    #     # Produces a sparse representation of the counts
+    #     # Initialize
+    #     vector = CountVectorizer()
+    #     # We fit and transform the vector created
+    #     frequency_matrix = vector.fit_transform(df.tweet_text)
+    #     # Sum all the frequencies for each word
+    #     sum_frequencies = np.sum(frequency_matrix, axis=0)
+    #     # Now we use squeeze to remove single-dimensional entries from the shape of an array that we got from applying np.asarray to
+    #     # the sum of frequencies.
+    #     frequency = np.squeeze(np.asarray(sum_frequencies))
+    #     # Now we get into a dataframe all the frequencies and the words that they correspond to
+    #     frequency_df = pd.DataFrame([frequency], columns=vector.get_feature_names()).transpose()
+    #
+    #     print(df.tweet_text)
+    #     print(frequency_df)
+    #     return frequency_df
+    #
+    # def graph(self,word_frequency, sent):
+    #     labels = word_frequency[0][1:51].index
+    #     title = "Word Frequency for %s" % sent
+    #     # Plot the figures
+    #     plt.figure(figsize=(10, 5))
+    #     plt.bar(np.arange(50), word_frequency[0][1:51], width=0.8, color=sns.color_palette("bwr"), alpha=0.5,
+    #             edgecolor="black", capsize=8, linewidth=1);
+    #     plt.xticks(np.arange(50), labels, rotation=90, size=14);
+    #     plt.xlabel("50 more frequent words", size=14);
+    #     plt.ylabel("Frequency", size=14);
+    #     # plt.title('Word Frequency for %s', size=18) %sent;
+    #     plt.title(title, size=18)
+    #     plt.grid(False);
+    #     plt.gca().spines["top"].set_visible(False);
+    #     plt.gca().spines["right"].set_visible(False);
+    #     plt.show()
+
+
+
+#https://towardsdatascience.com/natural-language-processing-count-vectorization-with-scikit-learn-e7804269bb5e
 
 if __name__ == '__main__':
 
@@ -220,6 +316,7 @@ if __name__ == '__main__':
     datapreparation = data_preparation()
     genwordcloud = wordcloud()
     senti=sentimentanalysis()
+    wf = wordfreq()
 
 
     df = selectdb.sqlconnect()
@@ -263,6 +360,22 @@ if __name__ == '__main__':
     genwordcloud.wordclouddraw(df, sent="all")
     genwordcloud.wordclouddraw(df, sent="positive")
     genwordcloud.wordclouddraw(df, sent="negative")
+
+    #wf.vectorization(df)
+
+    wf.vectorization(df, sent2="all")
+    #print (df[df['sentiment'] == 1])
+    wf.vectorization(df[df['sentiment'] == 1], sent2="positive")
+    wf.vectorization(df[df['sentiment'] == -1], sent2="negative")
+
+    #word_frequency = wf.vectorization(df).sort_values(0, ascending=False)
+    #word_frequency_pos = wf.vectorization(df[df['sentiment'] == 'Positive']).sort_values(0,ascending=False)
+    #word_frequency_neg = wf.vectorization(df[df['sentiment'] == 'Negative']).sort_values(0,ascending=False)
+
+    # Graph with frequency words all, positive and negative tweets and get the frequency
+    #wf.graph(word_frequency, 'all')
+
+    #print(frequency_df)
 
 
 
