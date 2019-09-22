@@ -1,6 +1,7 @@
 # twittersentiment
 <h1>Personal project to analyse tweets for sentiment analysis</h1>
 
+
 <h2>Why this project?</h2>
 <p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis.<br>
 For this project we will be analysing sentiments on Taylor Swift's recently released new album "Lover".
@@ -37,19 +38,17 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 	<h5>Positive tweets wordcloud:</h5>
 	<!--![Image of positive tweets wordcloud]
 	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png)-->
-	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="500">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="550">
+	<p>Explanation coming soon...</p>
 	<br>
 	<h5>Negative tweets wordcloud:</h5>
-	![Image of negative tweets wordcloud]
-	(https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_neg_tweets.png)
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_neg_tweets.png" width="550">
 	<br>
 	<h5>Positive tweets graph:</h5>
-	![Image of positive tweets graph]
-	(https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_positive.png
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_positive.png" width="550">
 	<br>
 	<h5>Negative tweets graph:</h5>
-	![Image of negative tweets graph]
-	(https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_negative.png)
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_negative.png" width="550">
 	<br>
 	
 
@@ -66,3 +65,5 @@ Cheers,<br>
 Tim
 
 Have a lovely day! </p>
+
+
