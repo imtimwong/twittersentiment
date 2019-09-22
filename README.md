@@ -36,7 +36,7 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <p>
 	<h5>Positive tweets wordcloud:</h5>
 	![Image of positive tweets wordcloud]
-	(https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png)
+	(https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png?raw=true)
 	<br>
 	<h5>Negative tweets wordcloud:</h5>
 	![Image of negative tweets wordcloud]
