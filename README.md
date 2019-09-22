@@ -2,7 +2,8 @@
 <h1>Personal project to analyse tweets for sentiment analysis</h1>
 
 <h2>Why this project?</h2>
-<p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis. 
+<p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis.<br>
+For this project we will be analysing sentiments on Taylor Swift's recently released new album "Lover".
 
 <h3>Requirements:</h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
@@ -28,7 +29,6 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 
 <li> Generating wordclouds based on sentiment score << Done &#10004;</li>
 <li> Generating word count frequency graph << WIP &#128736;</li>
-<li> Generating pie chart to show sentiment type : positive, negative, neutral </li>
 <li> More to come...</li>
 </ol>
 

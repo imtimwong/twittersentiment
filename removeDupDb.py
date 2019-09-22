@@ -13,8 +13,8 @@ connection_rem = psycopg2.connect(user=postgrescredentials.user,
 
 cursor_removeDup = connection_rem.cursor()
 
-removeDupSQL="DELETE FROM TWEETS WHERE tweet_id IN (SELECT tweet_id FROM (SELECT tweet_id, ROW_NUMBER() OVER( PARTITION BY tweet_text ORDER BY  tweet_id ) AS row_num FROM TWEETS ) t WHERE t.row_num > 1 );"
-
+#removeDupSQL="DELETE FROM TWEETS WHERE tweet_id IN (SELECT tweet_id FROM (SELECT tweet_id, ROW_NUMBER() OVER( PARTITION BY tweet_text ORDER BY  tweet_id ) AS row_num FROM TWEETS ) t WHERE t.row_num > 1 );"
+removeDupSQL="DELETE FROM TWEETS_HAZE WHERE tweet_id IN (SELECT tweet_id FROM (SELECT tweet_id, ROW_NUMBER() OVER( PARTITION BY tweet_text ORDER BY  tweet_id ) AS row_num FROM TWEETS_HAZE ) t WHERE t.row_num > 1 );"
 
 cursor_removeDup.execute(removeDupSQL)
 
