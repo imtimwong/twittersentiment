@@ -107,9 +107,13 @@ class load_into_db():
         cursor2 = connection.cursor()
 
 
-        cursor.execute("INSERT INTO TWITTER_USR (USR_ID,USR_NM,TWITTER_USR_NM) VALUES (%s,%s,%s) ON CONFLICT(USR_ID) DO NOTHING;",(user_id,user_name,twitter_user_name))
+        #cursor.execute("INSERT INTO TWITTER_USR (USR_ID,USR_NM,TWITTER_USR_NM) VALUES (%s,%s,%s) ON CONFLICT(USR_ID) DO NOTHING;",(user_id,user_name,twitter_user_name))
 
-        cursor2.execute("INSERT INTO TWEETS (USR_ID,TOPICS,TWEET_TEXT,CREATED_AT) VALUES (%s,%s,%s,%s);",(user_id,topics,tweet,created_at))
+        #cursor2.execute("INSERT INTO TWEETS (USR_ID,TOPICS,TWEET_TEXT,CREATED_AT) VALUES (%s,%s,%s,%s);",(user_id,topics,tweet,created_at))
+
+        cursor.execute("INSERT INTO TWITTER_USR_HAZE (USR_ID,USR_NM,TWITTER_USR_NM) VALUES (%s,%s,%s) ON CONFLICT(USR_ID) DO NOTHING;",(user_id,user_name,twitter_user_name))
+
+        cursor2.execute("INSERT INTO TWEETS_HAZE (USR_ID,TOPICS,TWEET_TEXT,CREATED_AT) VALUES (%s,%s,%s,%s);",(user_id,topics,tweet,created_at))
 
         connection.commit()
 
@@ -133,8 +137,10 @@ class load_into_db():
 if __name__ == '__main__':
 
     #topics = ["Taylor Swift", "Lover"]
-    topics = "Taylor Swift"
-    fetched_tweets_filename = "tweets.txt"
+    topics = "Haze"
+    fetched_tweets_filename = "tweets_HAZE.txt"
+    #topics = "Taylor Swift"
+    #fetched_tweets_filename = "tweets.txt"
 
     api = API(wait_on_rate_limit_notify=True)
 
