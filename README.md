@@ -1,16 +1,14 @@
 
 
-<!DOCTYPE html>
-<html>
 # twittersentiment
-<body>
+
 <h1>Personal project to analyse tweets for sentiment analysis</h1>
 
 
 <h2>Why this project?</h2>
 <p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis.<br>
 In the wake off
-For this project we will be analysing sentiments on the yearly air pollution .
+For this project we will be analysing sentiments on the yearly air pollution.
 
 <h3>Requirements:</ h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
@@ -72,8 +70,6 @@ Tim
 
 Have a lovely day! </p>
 
-</body>
-</html>
 
 
 
