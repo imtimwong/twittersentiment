@@ -10,6 +10,7 @@
 
 This project is an analysis of the sentiments on the yearly <a href="https://www.businessinsider.my/11-photos-of-the-haze-that-show-why-malaysias-pm-mahathir-is-writing-to-jokowi/">air pollution</a> affecting mainly Malaysia, Singapore and Indonesia. Malaysia has been hit by worsening haze with some areas entering the "unhealthy" zone based on the API(Air pollution index) rating.
 <br>
+
 Based on the results of the analysis, we can obtain the public's opinion about the haze and how it's affecting them.
 
 <h3>Requirements:</ h3>
