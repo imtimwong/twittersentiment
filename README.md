@@ -1,11 +1,16 @@
+
+
 # twittersentiment
+
 <h1>Personal project to analyse tweets for sentiment analysis</h1>
+
 
 <h2>Why this project?</h2>
 <p>The objective is to learn to work with semi-structured data and Python. To stream live tweets and pump it into Postgresql for sentiment analysis.<br>
-For this project we will be analysing sentiments on Taylor Swift's recently released new album "Lover".
+In the wake off
+For this project, we will be analysing sentiments on the yearly air pollution hitting mainly Malaysia, Singapore and Indonesia. Malaysia has been hit by worsening haze with some areas entering the "unhealthy" zone.
 
-<h3>Requirements:</h3>
+<h3>Requirements:</ h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
 <p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy</p>
 
@@ -32,6 +37,28 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <li> More to come...</li>
 </ol>
 
+<h4>Analysis results:</h4>
+<p>
+	<h5>Positive tweets wordcloud:</h5>
+	<!--![Image of positive tweets wordcloud]
+	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png)-->
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="550">
+	<p>Explanation coming soon...</p>
+	<br>
+	<h5>Negative tweets wordcloud:</h5>
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_neg_tweets.png" width="550">
+	<br>
+	<h5>Positive tweets graph:</h5>
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_positive.png" width="550">
+	<br>
+	<h5>Negative tweets graph:</h5>
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_negative.png" width="550">
+	<br>
+	
+
+</p>
+
+
 Current project status: data analysis <br>
 Next milestone: data analysis
 
@@ -42,3 +69,7 @@ Cheers,<br>
 Tim
 
 Have a lovely day! </p>
+
+
+
+
