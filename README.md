@@ -35,8 +35,9 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <h4>Analysis results:</h4>
 <p>
 	<h5>Positive tweets wordcloud:</h5>
-	![Image of positive tweets wordcloud]
-	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png)
+	<!--![Image of positive tweets wordcloud]
+	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png)-->
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="48">
 	<br>
 	<h5>Negative tweets wordcloud:</h5>
 	![Image of negative tweets wordcloud]
