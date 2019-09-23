@@ -240,7 +240,7 @@ class wordfreq():
 
 
 
-        #filename = "/%s_graph_all.png" #%sent2
+
         filename = "/HAZE_graph_%s.png" %sent2
         graphpath = file + filename
         plt.savefig(graphpath, format="png")
