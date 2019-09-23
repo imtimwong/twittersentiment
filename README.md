@@ -45,17 +45,17 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 	<h5>Positive tweets wordcloud:</h5>
 	<!--![Image of positive tweets wordcloud]
 	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png)-->
-	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="550">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="550" alt="Positive tweets wordcloud">
 	<p>Explanation coming soon...</p>
 	<br>
 	<h5>Negative tweets wordcloud:</h5>
-	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_neg_tweets.png" width="550">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_neg_tweets.png" width="550" alt="Negative tweets wordcloud">
 	<br>
 	<h5>Positive tweets graph:</h5>
-	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_positive.png" width="550">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_positive.png" width="550" alt="Positive tweets graph">
 	<br>
 	<h5>Negative tweets graph:</h5>
-	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_negative.png" width="550">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_negative.png" width="550" alt="Negative tweets graph">
 	<br>
 	
 
