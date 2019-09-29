@@ -36,7 +36,8 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <li> Getting sentiment score of each tweet with <a href="https://textblob.readthedocs.io/en/dev/"> TextBlob</a> << Done &#10004;</li>
 
 <li> Generating wordclouds based on sentiment score << Done &#10004;</li>
-<li> Generating word count frequency graph << WIP &#128736;</li>
+<li> Generating word count frequency graph << Done &#10004;</li>
+<li> Experimenting on pyspark and hadoop. Possible plans to add in spark and hadoop</li>
 <li> More to come...</li>
 </ol>
 
@@ -44,7 +45,7 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 <p>
 	<h5>Positive tweets wordcloud:</h5>
 	<!--![Image of positive tweets wordcloud]
-	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png)-->
+	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png) << WIP &#128736;</li>-->
 	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="550" alt="Positive tweets wordcloud">
 	<p>Explanation coming soon...</p>
 	<br>
