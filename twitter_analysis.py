@@ -1,24 +1,24 @@
 #! /usr/local/bin/python3.7
 
 #import for db connection
-import psycopg2
+#import psycopg2
 import postgrescredentials
 
 #import for ORM
 import sqlalchemy as db
 
-#import
+#import for dataframes
 import numpy as np
 import pandas as pd
 
-import re
+#import re
 
-import nltk
+#import nltk
 #need to manuall download 'punkt' before using this : nltk.download('punkt')
 from nltk.corpus import (stopwords)
 
-#for correcting elongated words
-from nltk.tokenize import word_tokenize
+
+#from nltk.tokenize import word_tokenize
 
 #for os intraction
 import os
@@ -28,6 +28,16 @@ from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
 from textblob import TextBlob
+
+
+#import sklearn
+from sklearn.feature_extraction.text import (
+    CountVectorizer)
+
+import collections
+import seaborn as sns
+sns.set(style="darkgrid")
+sns.set(font_scale=1.3)
 
 
 class extractDB():
@@ -76,8 +86,10 @@ class data_preparation():
         df['tweet_text'] = df['tweet_text'].str.replace('haze', '')
 
 
-        print(df['tweet_text'].iloc[50])
-        print(df['tweet_text'].iloc[60])
+        #print(df['tweet_text'].iloc[50])
+        #print(df['tweet_text'].iloc[60])
+
+
 
 
         return df
@@ -96,8 +108,12 @@ class data_preparation():
 
 
         df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop_words_eng)]))
-        print(df['tweet_text'].iloc[50])
-        print(df['tweet_text'].iloc[60])
+        #print(df['tweet_text'].iloc[50])
+        #print(df['tweet_text'].iloc[60])
+
+        #print(df[tweet_text])
+        #with open("outputtweettext", 'a') as tf:
+        #    tf.write(df.tweet_text.to_string(index=False, header=False))
 
         return df
 
@@ -116,9 +132,6 @@ class wordcloud():
 
     def wordclouddraw(self,df,sent):
 
-
-        #text = df.tweet_text
-        #print(textdf)
 
         if sent == 'positive':
 
@@ -141,13 +154,10 @@ class wordcloud():
             filename = "/HAZE_all_tweets.png"
 
 
-        #text = text_filtered_sentiment.tweet_text.to_string( index=False, header=False)
-        # this one above coorect
-
 
         file = os.getcwd()
 
-        print(file)
+        #print(file)
 
         wordcloud = WordCloud(
             width = 3000,
@@ -191,21 +201,12 @@ class sentimentanalysis():
         else:
             return -1
 
-import sklearn
-from sklearn.preprocessing import Normalizer
-from sklearn.feature_extraction.text import (
-    CountVectorizer,
-    TfidfVectorizer
-)
-#https://towardsdatascience.com/sentiment-analysis-with-text-mining-13dd2b33de27
-import collections
-import seaborn as sns
-sns.set(style="darkgrid")
-sns.set(font_scale=1.3)
+
 
 class wordfreq():
 
     def vectorization(self, df, sent2):
+        # https://towardsdatascience.com/sentiment-analysis-with-text-mining-13dd2b33de27
 
         countv = CountVectorizer()
         bow = countv.fit_transform(df.tweet_text)
@@ -239,7 +240,7 @@ class wordfreq():
 
 
 
-        #filename = "/%s_graph_all.png" #%sent2
+
         filename = "/HAZE_graph_%s.png" %sent2
         graphpath = file + filename
         plt.savefig(graphpath, format="png")
@@ -290,8 +291,8 @@ if __name__ == '__main__':
     #appended_data['sentiment'] = appended_data.body.apply(lambda body: TextBlob(body).sentiment)
 
     #print(df.tweet_text.head(30),df.sentiment.head(30))
-    print(df['tweet_text'].iloc[50])
-    print(df['tweet_text'].iloc[60])
+    #print(df['tweet_text'].iloc[50])
+    #print(df['tweet_text'].iloc[60])
 
 
     #genwordcloud.wordclouddraw(pd.Series([g for g in df[df.sentiment == 1].tweet_text]).str.cat(sep=' '))
@@ -318,6 +319,3 @@ if __name__ == '__main__':
 
     #print(frequency_df)
 
-
-
-#word_cloud(pd.Series([t for t in tweet_table.tweet]).str.cat(sep=' '))
