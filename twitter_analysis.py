@@ -20,13 +20,14 @@ from nltk.corpus import (stopwords)
 
 #from nltk.tokenize import word_tokenize
 
-#for os intraction
+#for os commands
 import os
 
 
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
+#import for Natural language Processing(NLP) sentiment analysis library
 from textblob import TextBlob
 
 
@@ -41,6 +42,9 @@ sns.set(font_scale=1.3)
 
 
 class extractDB():
+    """
+    To read from db
+    """
 
     def sqlconnect(self):
 
@@ -50,20 +54,19 @@ class extractDB():
 
         #https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html
 
-        #put all preprocessing into one class later
         s="SELECT * FROM TWEETS_HAZE;"
 
 
         df = pd.read_sql(s,con, index_col="tweet_id")
 
-
         return df
-
-
         #print(df['tweet_text'])
 
 
 class data_preparation():
+    """
+    To clean tweets and remove words that we don't need for analysis
+    """
 
     def preprocessing(self,df):
 
@@ -90,18 +93,21 @@ class data_preparation():
         #print(df['tweet_text'].iloc[60])
 
 
-
-
         return df
 
 
     def remove_stopwords(self,df):
+        """
+        Stopwords like the,a,in,an will bring no value to our analysis and it should be removed.
+        """
 
         #https://stackoverflow.com/questions/29523254/python-remove-stop-words-from-pandas-dataframe
+
         #removing stop words such as "the,a,in,an"
         stop_words_eng = stopwords.words('english')
         #df['tweet_text'] = df['tweet_text'].str.lower()
-        #lamda - hidden function
+
+        #lamda a type of hidden function or anonymous function written in one line instead of writing a new function
         #apply is used to apply the lamda function on one column
         #split the tweet using space in x.split() then check for if its not a stop word then join it together again with space
         #and move on to the next word of the tweet
@@ -111,9 +117,6 @@ class data_preparation():
         #print(df['tweet_text'].iloc[50])
         #print(df['tweet_text'].iloc[60])
 
-        #print(df[tweet_text])
-        #with open("outputtweettext", 'a') as tf:
-        #    tf.write(df.tweet_text.to_string(index=False, header=False))
 
         return df
 
@@ -129,6 +132,9 @@ class data_preparation():
 
 
 class wordcloud():
+    """
+    to generate wordcloud based on sentiment value positive, negative and both positive and negative.
+    """
 
     def wordclouddraw(self,df,sent):
 
@@ -149,7 +155,7 @@ class wordcloud():
             filename = "/HAZE_neg_tweets.png"
 
         else:
-
+            #this includes both positive and negative tweets
             text = df.tweet_text.to_string( index=False, header=False)
             filename = "/HAZE_all_tweets.png"
 
@@ -187,7 +193,9 @@ class wordcloud():
 
 
 class sentimentanalysis():
-
+    """
+    to convert sentiment score generated from TextBlob library into 1,-1 or 0 based on sentiment score.
+    """
 
     def analyse_sentiment(self, df):
 
@@ -204,6 +212,10 @@ class sentimentanalysis():
 
 
 class wordfreq():
+
+    """
+    to generate a graph based on word frequency
+    """
 
     def vectorization(self, df, sent2):
         # https://towardsdatascience.com/sentiment-analysis-with-text-mining-13dd2b33de27
@@ -295,27 +307,18 @@ if __name__ == '__main__':
     #print(df['tweet_text'].iloc[60])
 
 
-    #genwordcloud.wordclouddraw(pd.Series([g for g in df[df.sentiment == 1].tweet_text]).str.cat(sep=' '))
-
-    #word_cloud(pd.Series([t for t in tweet_table[tweet_table.sentiment == "Positive"].tweet]).str.cat(sep=' '))
-
     genwordcloud.wordclouddraw(df, sent="all")
     genwordcloud.wordclouddraw(df, sent="positive")
     genwordcloud.wordclouddraw(df, sent="negative")
 
     #wf.vectorization(df)
 
+    # Graph with frequency words all, positive and negative tweets and get the frequency
     wf.vectorization(df, sent2="all")
     #print (df[df['sentiment'] == 1])
     wf.vectorization(df[df['sentiment'] == 1], sent2="positive")
     wf.vectorization(df[df['sentiment'] == -1], sent2="negative")
 
-    #word_frequency = wf.vectorization(df).sort_values(0, ascending=False)
-    #word_frequency_pos = wf.vectorization(df[df['sentiment'] == 'Positive']).sort_values(0,ascending=False)
-    #word_frequency_neg = wf.vectorization(df[df['sentiment'] == 'Negative']).sort_values(0,ascending=False)
 
-    # Graph with frequency words all, positive and negative tweets and get the frequency
-    #wf.graph(word_frequency, 'all')
 
-    #print(frequency_df)
 
