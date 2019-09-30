@@ -13,6 +13,8 @@ This project is an analysis of the sentiments on the yearly <a href="https://www
 
 Based on the results of the analysis, we can obtain the public's opinion about the haze and how it's affecting them.
 
+Update: Currently experimenting with adding pyspark and hadoop into the project.
+
 <h3>Requirements:</ h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
 <p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy</p>
