@@ -62,8 +62,13 @@ class thestreamListener(StreamListener):
             created_at = data['created_at']
             tweet = data['text']
 
+            #can't read output with json as output is single quotes instead of double
+            # with open(self.fetched_tweets_filename, 'a') as tf:
+            #     tf.write(str(data))
+
+            #this will export a proper json format file
             with open(self.fetched_tweets_filename, 'a') as tf:
-                tf.write(str(data))
+                json.dump(data, tf)
                 # tf.write(str(topics)+"§"+str(user_id)+"§"+str(twitter_user_name)+"§"+str(user_name)+"§"+str(tweet)+"§"+str(created_at)+"\n")
             #return True
 
