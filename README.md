@@ -48,13 +48,13 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 
 <h4>Phase 2 (adding pySpark and Hadoop to replicate analysis part in Phase 1):</h4> 
 <ol>
-<li>Setup docker containers for Jupyter with pySpark and Hadoop HDFS</li>
-<li>Export tweets from postgresql into text file and load it into HDFS</li>
-<li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow</li>
-<li>Data preparation/cleaning</li>
+<li>Setup docker containers for Jupyter with pySpark and Hadoop HDFS << Done &#10004;</li>
+<li>Export tweets from postgresql into text file and load it into HDFS << Done &#10004;</li>
+<li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow << Done &#10004;</li>
+<li>Data preparation/cleaning << WIP &#128736;</li>
 <li> More to come...</li>
 
-<h4>Analysis results:</h4>
+<h4>Analysis results (Phase 1):</h4>
 <p>
 	<h5>Positive tweets wordcloud:</h5>
 	<!--![Image of positive tweets wordcloud]
