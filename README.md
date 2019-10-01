@@ -13,7 +13,7 @@ This project is an analysis of the sentiments on the yearly <a href="https://www
 
 Based on the results of the analysis, we can obtain the public's opinion about the haze and how it's affecting them.
 
-<b>Update:</b> Currently experimenting with adding pyspark and hadoop into the project.
+<b>Update: </b>Added Spark and Hadoop into the project.
 
 <h3>Requirements:</ h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
