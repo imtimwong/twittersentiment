@@ -6,7 +6,7 @@
 
 
 <h2>Why this project?</h2>
-<p>The objective is to learn to work with semi-structured data and Python. To stream live tweets with twitter API in JSON format and pump it into Postgresql for sentiment analysis.<br>
+<p>The objective is to learn to work with semi-structured data and Data Science technologies/stack. To stream live tweets with twitter API for sentiment analysis.<br>
 
 This project is an analysis of the sentiments on the yearly <a href="https://www.businessinsider.my/11-photos-of-the-haze-that-show-why-malaysias-pm-mahathir-is-writing-to-jokowi/">air pollution</a> affecting mainly Malaysia, Singapore and Indonesia. Malaysia has been hit by worsening haze with some areas entering the "unhealthy" zone based on the API(Air pollution index) rating.
 <br>
