@@ -16,12 +16,14 @@ Based on the results of the analysis, we can obtain the public's opinion about t
 <b>Update:</b> Currently experimenting with adding pyspark and hadoop into the project.
 
 <h3>Requirements:</ h3>
-<p>Tech used: Python, Postgresql, Docker Container, Pycharm</p>
-<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy</p>
+<p>Tech used: Python, Postgresql, Docker Container, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
+<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy, pyArrow, pySpark</p>
 
 Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feature1/streamtweets.py">streamtweets.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a>
 
 <h3>Milestones:</h3> 
+
+<h4>Phase 1 :</h4> 
 <ol>
 <li>Apply for twitter developer account and credentials. << Done &#10004;</li>
 <li>Build basic twitter streamer with authentication and print tweets to screen using <a href="http://docs.tweepy.org/en/latest/">tweepy</a> << Done &#10004;</li>
@@ -39,9 +41,18 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/feat
 
 <li> Generating wordclouds based on sentiment score << Done &#10004;</li>
 <li> Generating word count frequency graph << Done &#10004;</li>
-<li> Experimenting on pyspark and hadoop. Possible plans to add in spark and hadoop</li>
-<li> More to come...</li>
+<li> Experimenting on pyspark and hadoop. Possible plans to add in spark and hadoop << Done &#10004;</li></li>
+
+
 </ol>
+
+<h4>Phase 2 (adding pySpark and Hadoop to replicate analysis part in Phase 1):</h4> 
+<ol>
+<li>Setup docker containers for Jupyter with pySpark and Hadoop HDFS</li>
+<li>Export tweets from postgresql into text file and load it into HDFS</li>
+<li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow</li>
+<li>Data preparation/cleaning</li>
+<li> More to come...</li>
 
 <h4>Analysis results:</h4>
 <p>
