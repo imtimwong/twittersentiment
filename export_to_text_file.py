@@ -13,9 +13,9 @@ cursor2 = connection.cursor()
 
 
 
-path='/Users/tim/PycharmProjects/twittersentiment/tweets_pg_export.txt'
+path='/Users/tim/PycharmProjects/twittersentiment/tweets_pg_export2.txt'
 
-sql = "COPY (SELECT TWEET_TEXT FROM TWEETS_HAZE) TO STDOUT WITH CSV DELIMITER ';'"
+sql = "COPY (SELECT TWEET_TEXT FROM TWEETS_HAZE) TO STDOUT WITH CSV HEADER DELIMITER ';'"
 with open(path, "w") as file:
     cursor.copy_expert(sql, file)
 
