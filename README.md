@@ -19,7 +19,7 @@ Based on the results of the analysis, we can obtain the public's opinion about t
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
 <p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy, pyArrow, pySpark</p>
 
-Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadop.ipynb">twitter_analysis_spark_hadop.ipynb</a>
+Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a>
 
 <h3>Milestones:</h3> 
 
@@ -52,7 +52,7 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/mast
 <li>Export tweets from postgresql into text file and load it into HDFS << Done &#10004;</li>
 <li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow << Done &#10004;</li>
 <li>Data preparation/cleaning << data preparation test successful - WIP &#128736;
-You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadop.ipynb">twitter_analysis_spark_hadop.ipynb</a></li>
+You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a></li>
 <li> More to come...</li>
 
 <h4>Analysis results (Phase 1):</h4>
