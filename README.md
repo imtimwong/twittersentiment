@@ -19,7 +19,16 @@ Based on the results of the analysis, we can obtain the public's opinion about t
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
 <p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy, pyArrow, pySpark</p>
 
-Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a>, <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a>
+Please refer to :
+<ul>
+<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>
+ : script to live stream tweets from twitter api and load it into postgresql</li>
+<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>
+ : script to remove duplicated tweets eg: retweets</li>
+<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a> : script for data preparation and analysis</li>
+<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
+<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop</li>
+</ul>
 
 <h3>Milestones:</h3> 
 
