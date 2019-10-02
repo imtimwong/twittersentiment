@@ -23,8 +23,8 @@ from nltk.corpus import (stopwords)
 #for os commands
 import os
 
-
-from wordcloud import WordCloud, STOPWORDS
+#for wordcloud
+from wordcloud import WordCloud #, STOPWORDS
 import matplotlib.pyplot as plt
 
 #import for Natural language Processing(NLP) sentiment analysis library
