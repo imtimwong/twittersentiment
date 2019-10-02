@@ -51,7 +51,8 @@ Please refer to <a href="https://github.com/imtimwong/twittersentiment/blob/mast
 <li>Setup docker containers for Jupyter with pySpark and Hadoop HDFS << Done &#10004;</li>
 <li>Export tweets from postgresql into text file and load it into HDFS << Done &#10004;</li>
 <li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow << Done &#10004;</li>
-<li>Data preparation/cleaning << data preparation test successful - WIP &#128736;</li>
+<li>Data preparation/cleaning << data preparation test successful - WIP &#128736;
+You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadop.ipynb">twitter_analysis_spark_hadop.ipynb</a></li>
 <li> More to come...</li>
 
 <h4>Analysis results (Phase 1):</h4>
