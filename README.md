@@ -15,7 +15,7 @@ Based on the results of the analysis, we can obtain the public's opinion about t
 
 <b>Update: </b>Added Spark and Hadoop into the project.
 
-<h3>Requirements:</ h3>
+<h3>Requirements:</h3>
 <p>Tech used: Python, Postgresql, Docker Container, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
 <p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy, pyArrow, pySpark</p>
 
@@ -29,6 +29,7 @@ Please refer to :
 <li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
 <li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop</li>
 </ul>
+
 
 <h3>Milestones:</h3> 
 
