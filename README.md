@@ -96,6 +96,8 @@ Ps: Stay tuned for more updates!
 Cheers,<br>
 Tim
 
+Make progress or make excuses
+
 Have a lovely day! </p>
 
 
