@@ -68,6 +68,7 @@ You'll be able to see the transformation of the tweets in <a href="https://githu
 <br>
 Current project status: data analysis <br>
 Next milestone: data analysis
+<br>
 
 Ps: Stay tuned for more updates! 
 
@@ -75,7 +76,8 @@ Ps: Stay tuned for more updates!
 Cheers,<br>
 Tim
 
-One step at a time<br>
+How do you climb a mountain? One step at a time.<br>
+
 Make progress or make excuses
 
 Have a lovely day! </p>
