@@ -76,7 +76,9 @@ Ps: Stay tuned for more updates!
 Cheers,<br>
 Tim
 
-How do you climb a mountain? One step at a time.<br>
+How do you climb a mountain? <br>
+
+One step at a time.<br>
 
 Make progress or make excuses
 
