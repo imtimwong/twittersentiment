@@ -65,7 +65,7 @@ Please refer to :
 You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a></li>
 <li> More to come...</li>
 
-
+<br>
 Current project status: data analysis <br>
 Next milestone: data analysis
 
@@ -75,7 +75,7 @@ Ps: Stay tuned for more updates!
 Cheers,<br>
 Tim
 
-One step at a time
+One step at a time<br>
 Make progress or make excuses
 
 Have a lovely day! </p>
