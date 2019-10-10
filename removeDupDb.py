@@ -1,5 +1,5 @@
 #! /usr/local/bin/python3.7
-
+'''This script is to remove duplicate tweets such as RT retweets which doesn't serve any purpose in our analysis'''
 import psycopg2
 import postgrescredentials
 

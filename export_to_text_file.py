@@ -11,6 +11,7 @@ connection = psycopg2.connect(user=postgrescredentials.user,
 cursor = connection.cursor()
 cursor2 = connection.cursor()
 
+'''This script is to export data from postgreslql to text file'''
 
 
 path='/Users/tim/PycharmProjects/twittersentiment/tweets_pg_export2.txt'
