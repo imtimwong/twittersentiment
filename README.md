@@ -89,25 +89,25 @@ Make progress or make excuses
 Have a lovely day! </p>
 
 
-<h4>Analysis results (Phase 1):</h4>
+<h4>Analysis results (Phase 2):</h4>
 <p>
 	<h5>Positive tweets wordcloud:</h5>
 	<!--![Image of positive tweets wordcloud]
 	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png) << WIP &#128736;</li>-->
-	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="550" alt="Positive tweets wordcloud">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/results%20Phase%202%20using%20pySpark%20Hadoop/HAZE_pos_tweets_spark.png" width="550" alt="Positive tweets wordcloud">
 	<br>
 	<h5>Negative tweets wordcloud:</h5>
-	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_neg_tweets.png" width="550" alt="Negative tweets wordcloud">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/results%20Phase%202%20using%20pySpark%20Hadoop/HAZE_neg_tweets_spark.png" width="550" alt="Negative tweets wordcloud">
 	<br>
 	<h5>Positive tweets graph:</h5>
-	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_positive.png" width="550" alt="Positive tweets graph">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/results%20Phase%202%20using%20pySpark%20Hadoop/HAZE_graph_positive_spark.png" width="550" alt="Positive tweets graph">
 	<br>
 	<h5>Negative tweets graph:</h5>
-	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_negative.png" width="550" alt="Negative tweets graph">
+	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/results%20Phase%202%20using%20pySpark%20Hadoop/HAZE_graph_negative_spark.png" width="550" alt="Negative tweets graph">
 	<br>
 	<h4>Summary</h4>
 	<p>We can see that people are mostly expressing thier frustration about the haze and we can know which countries are affected by it.
-	For now, I'm still looking for solutions to handle situations like "not bad" or "not good". "not bad" isn't a negative term and "not good" isn't a positive term, using certain NLP libraries might detect a false positive. Plus, adding features to detect sarcasm will help in increasing accuracy for text analysis.
+	For now, I'm still looking for solutions to handle situations like "not bad" or "not good". "not bad" isn't a negative term and "not good" isn't a positive term, using certain NLP libraries might detect a false positive. Plus, adding features to detect sarcasm will help in increasing accuracy for text analysis. Future phases will have additional features such as stemming, lexicon normalization and lemmetization.
 	Analysing tweets can have many use cases, especially in consumer businesses like brand monitoring, product launches insights, customer support email analysis, voice of customer(VOC) or feedback analysis.</p>
 	
 
