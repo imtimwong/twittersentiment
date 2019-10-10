@@ -13,21 +13,24 @@ This project is an analysis of the sentiments on the yearly <a href="https://www
 
 Based on the results of the analysis, we can obtain the public's opinion about the haze and how it's affecting them.
 
-<b>Update: </b>Added Spark and Hadoop into the project.
+This project has two phases. Phase 1 will be using twitter's API and stream tweets using tweepy to store it in Postgresql database for analysis using Python.
+
+Phase 2 will be modifiying and replicating the data preparation, analysis and storage stages in phase 1 using pySpark and Hadoop HDFS instead.
 
 <h3>Requirements:</h3>
-<p>Tech used: Python, Postgresql, Docker Container, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
+<p>Tech used: Python, Postgresql, Docker Container, SQLWorkbenchJ, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
 <p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy, matplotlib, seaborn, wordcloud, sklearn, pyArrow, pySpark</p>
 
 Please refer to :
 <ul>
-<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>
- : script to live stream tweets from twitter api and load it into postgresql</li>
-<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>
- : script to remove duplicated tweets eg: retweets</li>
-<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a> : script for data preparation and analysis</li>
-<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
-<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop(pls click reload if it doesn't load)</li>
+	<h3>Phase 1:</h3>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>: script to live stream tweets from twitter api and load it into postgresql</li>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>
+ 	: script to remove duplicated tweets eg: retweets</li>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a> : script for data preparation and analysis using Postgresql</li>
+	<h3>Phase 2:</h3>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop(pls click reload if it doesn't load)</li>
 </ul>
 
 
@@ -61,8 +64,9 @@ Please refer to :
 <li>Setup docker containers for Jupyter with pySpark and Hadoop HDFS << Done &#10004;</li>
 <li>Export tweets from postgresql into text file and load it into HDFS << Done &#10004;</li>
 <li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow << Done &#10004;</li>
-<li>Data preparation/cleaning << data preparation test successful - WIP &#128736;
-You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a></li>
+<li>Data preparation/cleaning << data preparation test successful << Done &#10004;
+You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> (pls click reload if it doesn't load)</li>
+<li>Adding explantion and data samples in twitter_analysis_spark_hadoop_breakdown.ipynb << Done &#10004;</li>
 <li> More to come...</li>
 
 <br>
@@ -91,7 +95,6 @@ Have a lovely day! </p>
 	<!--![Image of positive tweets wordcloud]
 	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png) << WIP &#128736;</li>-->
 	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/HAZE_pos_tweets.png" width="550" alt="Positive tweets wordcloud">
-	<p>Explanation coming soon...</p>
 	<br>
 	<h5>Negative tweets wordcloud:</h5>
 	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_neg_tweets.png" width="550" alt="Negative tweets wordcloud">
@@ -102,6 +105,9 @@ Have a lovely day! </p>
 	<h5>Negative tweets graph:</h5>
 	<img src="https://github.com/imtimwong/twittersentiment/blob/master/haze_results/final%20run%20haze/HAZE_graph_negative.png" width="550" alt="Negative tweets graph">
 	<br>
+	<p>Similar to the word clouds, we can see that people are mostly expressing thier frustration about the haze and we can know which countries are affected by it.
+	For now, I'm still looking for solutions to handle situations like "not bad" or "not good". "not bad" isn't a negative term and "not good" isn't a positive term, using certain NLP libraries might detect a false positive. Plus, adding features to detect sarcasm will help in increasing accuracy for text analysis.
+	Analysing tweets can have many use cases, especially in consumer businesses like brand monitoring, product launches insights, customer support email analysis, voice of customer(VOC) or feedback analysis.</p>
 	
 
 </p>
