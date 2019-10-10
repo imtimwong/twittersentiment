@@ -32,8 +32,8 @@ Please refer to :
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a> : script for data preparation and analysis using Postgresql</li>
 	<h3>Phase 2 (pySpark, Hadoop) :</h3>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
-	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop *without explanation (pls click reload if it doesn't load)</li>
-	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop * with breakdown explanation for each function and result (pls click reload if it doesn't load)</li>
+	<li><a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop *without explanation (pls click reload if it doesn't load)</li>
+	<li><a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop * with breakdown explanation for each function and result (pls click reload if it doesn't load)</li>
 </ul>
 
 
@@ -68,7 +68,7 @@ Please refer to :
 <li>Export tweets from postgresql into text file and load it into HDFS << Done &#10004;</li>
 <li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow << Done &#10004;</li>
 <li>Data preparation/cleaning << data preparation test successful << Done &#10004;
-You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> (pls click reload if it doesn't load)</li>
+You'll be able to see the transformation of the tweets in <a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> (pls click reload if it doesn't load)</li>
 <li>Adding explantion and data samples in twitter_analysis_spark_hadoop_breakdown.ipynb << Done &#10004;</li>
 <li> More to come...</li>
 
