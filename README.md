@@ -30,7 +30,8 @@ Please refer to :
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a> : script for data preparation and analysis using Postgresql</li>
 	<h3>Phase 2:</h3>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
-	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop(pls click reload if it doesn't load)</li>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop *without explanation (pls click reload if it doesn't load)</li>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop * with breakdown explanation for each function and result (pls click reload if it doesn't load)</li>
 </ul>
 
 
