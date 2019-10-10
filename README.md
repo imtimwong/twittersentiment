@@ -13,6 +13,8 @@ This project is an analysis of the sentiments on the yearly <a href="https://www
 
 Based on the results of the analysis, we can obtain the public's opinion about the haze and how it's affecting them.
 
+<h3>Project phases :</h3>
+
 This project has two phases. Phase 1 will be using twitter's API and stream tweets using tweepy to store it in Postgresql database for analysis using Python.
 
 Phase 2 will be modifiying and replicating the data preparation, analysis and storage stages in phase 1 using pySpark and Hadoop HDFS instead.
@@ -23,12 +25,12 @@ Phase 2 will be modifiying and replicating the data preparation, analysis and st
 
 Please refer to :
 <ul>
-	<h3>Phase 1:</h3>
+	<h3>Phase 1 (python,postgresql) :</h3>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>: script to live stream tweets from twitter api and load it into postgresql</li>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/removeDupDb.py">removeDupDb.py</a>
  	: script to remove duplicated tweets eg: retweets</li>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a> : script for data preparation and analysis using Postgresql</li>
-	<h3>Phase 2:</h3>
+	<h3>Phase 2 (pySpark, Hadoop) :</h3>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop *without explanation (pls click reload if it doesn't load)</li>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop * with breakdown explanation for each function and result (pls click reload if it doesn't load)</li>
@@ -74,7 +76,7 @@ You'll be able to see the transformation of the tweets in <a href="https://githu
 Current project status: data analysis <br>
 Next milestone: data analysis
 <br>
-
+<br>
 Ps: Stay tuned for more updates! 
 
 
@@ -109,6 +111,7 @@ Have a lovely day! </p>
 	<h4>Summary</h4>
 	<p>We can see that people are mostly expressing thier frustration about the haze and we can know which countries are affected by it.
 	For now, I'm still looking for solutions to handle situations like "not bad" or "not good". "not bad" isn't a negative term and "not good" isn't a positive term, using certain NLP libraries might detect a false positive. Plus, adding features to detect sarcasm will help in increasing accuracy for text analysis. Future phases will have additional features such as stemming, lexicon normalization and lemmetization.
+	<br>
 	Analysing tweets can have many use cases, especially in consumer businesses like brand monitoring, product launches insights, customer support email analysis, voice of customer(VOC) or feedback analysis.</p>
 	
 
