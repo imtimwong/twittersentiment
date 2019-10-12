@@ -24,9 +24,9 @@ Phase 2 will be modifiying and replicating the data preparation, analysis and st
 <p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy, matplotlib, seaborn, wordcloud, sklearn, pyArrow, pySpark</p>
 
 <h3>Program design:</h3>
-<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/misc/architecture_diagram.png" alt="Program design architecture diagram">
+<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/misc/architecture_diagram.png" alt="Program design architecture diagram" class="center">
 
-Please refer to :
+<h3>Please refer to :</h3>
 <ul>
 	<h3>Phase 1 (python,postgresql) :</h3>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/streamtweets.py">streamtweets.py</a>: script to live stream tweets from twitter api and load it into postgresql</li>
@@ -36,7 +36,7 @@ Please refer to :
 	<h3>Phase 2 (pySpark, Hadoop) :</h3>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
 	<li><a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop *without explanation (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
-	<li><a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop * with breakdown explanation for each function and result (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
+	<li><a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop <b>*with breakdown explanation</b> for each function and result (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
 </ul>
 
 
@@ -73,6 +73,7 @@ Please refer to :
 <li>Data preparation/cleaning << data preparation test successful << Done &#10004;
 You'll be able to see the transformation of the tweets in <a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
 <li>Adding explantion and data samples in twitter_analysis_spark_hadoop_breakdown.ipynb << Done &#10004;</li>
+<li>Produce program design architecture flow diagram.<< Done &#10004;</li>
 <li> More to come...</li>
 
 <br>
@@ -113,6 +114,7 @@ Have a lovely day! </p>
 	<br>
 	<h4>Summary</h4>
 	<p>We can see that people are mostly expressing thier frustration about the haze and we can know which countries are affected by it.<br>
+		<br>
 	For now, I'm still looking for solutions to handle situations like "not bad" or "not good". "not bad" isn't a negative term and "not good" isn't a positive term, using certain NLP libraries might detect a false positive. Plus, adding features to detect sarcasm will help in increasing accuracy for text analysis. Future phases will have additional features such as stemming, lexicon normalization and lemmetization.
 	</p>
 	<p>
