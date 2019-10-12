@@ -114,6 +114,7 @@ Have a lovely day! </p>
 	<br>
 	<h4>Summary</h4>
 	<p>We can see that people are mostly expressing thier frustration about the haze and we can know which countries are affected by it.<br>
+		<br>
 	For now, I'm still looking for solutions to handle situations like "not bad" or "not good". "not bad" isn't a negative term and "not good" isn't a positive term, using certain NLP libraries might detect a false positive. Plus, adding features to detect sarcasm will help in increasing accuracy for text analysis. Future phases will have additional features such as stemming, lexicon normalization and lemmetization.
 	</p>
 	<p>
