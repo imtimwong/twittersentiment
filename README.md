@@ -100,7 +100,7 @@ Have a lovely day! </p>
 <p>
 	<h5>Positive tweets wordcloud:</h5>
 	<!--![Image of positive tweets wordcloud]
-	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png) << WIP &#128736;</li>-->
+	(https://raw.github.com/imtimwong/twittersentiment/master/haze_results/final%20run%20haze/HAZE_pos_tweets.png) << WIP &#128736;</li> test-->
 	<img src="https://github.com/imtimwong/twittersentiment/blob/feature1/haze_results/final%20run%20haze/results%20Phase%202%20using%20pySpark%20Hadoop/HAZE_pos_tweets_spark.png" width="550" alt="Positive tweets wordcloud">
 	<br>
 	<h5>Negative tweets wordcloud:</h5>
