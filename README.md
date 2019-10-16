@@ -21,7 +21,7 @@ Phase 2 will be modifiying and replicating the data preparation, analysis and st
 
 <h3>Requirements:</h3>
 <p>Tech used: Python, Postgresql, Docker Container, SQLWorkbenchJ, Pycharm, Jupyter Notebook, Spark, Hadoop</p>
-<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, numpy, matplotlib, seaborn, wordcloud, sklearn, pyArrow, pySpark</p>
+<p>libraries: <a href="http://docs.tweepy.org/en/latest/">tweepy</a>, <a href="http://initd.org/psycopg/docs/install.html">psycopg2</a>, pandas, <a href="https://docs.sqlalchemy.org/en/13/core/tutorial.html">sqlalchemy</a><a href="https://www.nltk.org/install.html">, nltk</a>, TextBlob, numpy, matplotlib, seaborn, wordcloud, sklearn, pyArrow, pySpark</p>
 
 <h3>Program design:</h3>
 <img src="https://github.com/imtimwong/twittersentiment/blob/feature1/misc/architecture_diagram.png" alt="Program design architecture diagram" class="center">
@@ -35,8 +35,8 @@ Phase 2 will be modifiying and replicating the data preparation, analysis and st
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis.py">twitter_analysis.py</a> : script for data preparation and analysis using Postgresql</li>
 	<h3>Phase 2 (pySpark, Hadoop) :</h3>
 	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/export_to_text_file.py">export_to_text_file.py</a> : script to export tweets from postgresql to text file</li>
-	<li><a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.ipynb">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop *without explanation (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
-	<li><a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop <b>*with breakdown explanation</b> for each function and result (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop.pdf">twitter_analysis_spark_hadoop.ipynb</a> : script for data preparation and analysis for spark and hadoop *without explanation (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
+	<li><a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.pdf">twitter_analysis_spark_hadoop_breakdown.ipynb</a> : script for data preparation and analysis for spark and hadoop <b>*with breakdown explanation</b> for each function and result (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
 </ul>
 
 
@@ -71,7 +71,7 @@ Phase 2 will be modifiying and replicating the data preparation, analysis and st
 <li>Export tweets from postgresql into text file and load it into HDFS << Done &#10004;</li>
 <li>Load tweets from text file stored in HDFS into Spark dataframes and convert into Pandas dataframes using pyArrow << Done &#10004;</li>
 <li>Data preparation/cleaning << data preparation test successful << Done &#10004;
-You'll be able to see the transformation of the tweets in <a href="https://nbviewer.jupyter.org/github/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.ipynb">twitter_analysis_spark_hadoop_breakdown.ipynb</a> (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
+You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/twitter_analysis_spark_hadoop_breakdown.pdf">twitter_analysis_spark_hadoop_breakdown.ipynb</a> (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
 <li>Adding explantion and data samples in twitter_analysis_spark_hadoop_breakdown.ipynb << Done &#10004;</li>
 <li>Produce program design architecture flow diagram.<< Done &#10004;</li>
 <li> More to come...</li>
