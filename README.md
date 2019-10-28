@@ -74,11 +74,11 @@ Phase 2 will be modifiying and replicating the data preparation, analysis and st
 You'll be able to see the transformation of the tweets in <a href="https://github.com/imtimwong/twittersentiment/blob/master/jupyter_notebook_analysis_files/twitter_analysis_spark_hadoop_breakdown.pdf">twitter_analysis_spark_hadoop_breakdown.ipynb</a> (pls click this link instead of the one uploaded in this repo due to issues to load on github. pls click reload if it doesn't load)</li>
 <li>Adding explantion and data samples in twitter_analysis_spark_hadoop_breakdown.ipynb << Done &#10004;</li>
 <li>Produce program design architecture flow diagram.<< Done &#10004;</li>
-<li> More to come...</li>
+<li> Project ended, further enhancements will be planned</li>
 
 <br>
-Current project status: data analysis <br>
-Next milestone: data analysis
+Current project status: Complete  :) <br>
+Next milestone: -
 <br>
 <br>
 Ps: Stay tuned for more updates! 
